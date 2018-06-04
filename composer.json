@@ -1,0 +1,12 @@
+{
+  "autoload": {    "psr-4": {"":"src/"}    },
+  "require":
+  {
+    "symfony/http-foundation": "^4.0",
+    "symfony/routing": "^4.0",
+    "symfony/http-kernel": "^4.0",
+    "twig/twig": "~1.0",
+    "doctrine/orm": "^2.6",
+    "twbs/bootstrap": "4.0.0"
+  }
+}

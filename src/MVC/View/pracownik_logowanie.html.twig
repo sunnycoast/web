@@ -1,0 +1,11 @@
+{% extends 'MVC/View/Layouts/login.html.twig' %}
+
+{% block target %}
+    /pracownik_logowanie
+{% endblock %}
+
+{% block form %}
+    <div class="nf">PIN:</div>
+    <input class="yI" type="password" pattern="[0-9][0-9][0-9][0-9]" inputmode="numeric" name="pin" value="" autocomplete="off" required><br/>
+{% endblock %}
+
