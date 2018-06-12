@@ -96,7 +96,7 @@ class StalyKlientLogowanieController extends App
                 $_SESSION['imie' ] = $imie;
                 $_SESSION['zalogowany'] = true;
                 $_SESSION['uzytkownik'] = 'Staly_klient';
-                $_SESSION['log_adres' ] = 'test403.pl/staly_klient_logowanie';
+                $_SESSION['log_adres' ] = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
                 header('Location: ' . $imie . '/zamowienie');
                 exit();

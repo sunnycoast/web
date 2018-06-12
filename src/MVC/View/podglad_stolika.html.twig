@@ -174,29 +174,28 @@
     <div class="boix">
         <div class="zam">
             <div class="pZam">
-                <div id="pZaP" class="c">Witaj {{ imie }}!<br> Twoja rola to {{  rola }}</div>
+                <div id="pZaP" class="c">Rachunek nr {{ rachunek.IdRachunku }}<br>Stolik został zamówiony przez osobę o imienu  {{ rachunek.NaImie }}.<br> Jego zamówienie wygląda nastepująco</div>
             </div>
         </div>
 
         <div class="kat">
 
-            <div id="pKat" class="pKat" method="post">
-                <form id="pKat" class="pKat" method="post">
-                    {% for stolik in stoliki %}
-                        <button class="cBattonKat c" type="submit" name="{{ stolik.IdStolika }}">
-                            {{ stolik.IdStolika }}<br>
-                            {{ stolik.NazwaStolika }}<br>
-                        </button>
+            <div id="pKat" class="pKat" >
+                <form id="pKat" class="pKat">
+                    {% for pro in produkty %}
+                        <div id="produkt">
+                            {{ pro.NazwaProduktu }}, ilość {{ pro.LiczbaProduktow }} szt. cena za całość wynosi {{ pro.Cena }} zł  <br>
+                        </div>
                     {% endfor %}
                 </form>
             </div>
+            <div id="cena" align="center"> Cena za cały rachunek wynosi {{ cena }} zł</div>
         </div>
-
     </div>
 
 
-        <form class="my_form c">
-            <input class="yII" type="button" value="Powrót" onclick="window.location.href='/staly_klient_logowanie';">
-        </form>
+    <form class="my_form c">
+        <input class="yII" type="button" value="Powrót" onclick="window.location.href='/kelner_podglad_sali';">
+    </form>
 
 {% endblock %}

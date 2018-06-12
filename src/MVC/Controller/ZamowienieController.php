@@ -22,6 +22,7 @@ class ZamowienieController extends App
             {
                 $url = $_SESSION['log_adres'];
                 $_SESSION['IdRachunku'];
+
                 $em = $this->getEntityManager();
                 try{
                     $bil = $em->getRepository(Rachunek::class)->find($_SESSION['IdRachunku']);
@@ -40,6 +41,7 @@ class ZamowienieController extends App
             }
             else
             {
+                var_dump($_SESSION['IdRachunku']);
                 if (!empty($_POST))
                 {
                     $em = $this->getEntityManager();

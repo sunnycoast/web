@@ -28,6 +28,54 @@ class KelnerPodgladSaliController extends App
         $stoliki = ($qb->execute());
 
 
+        if (isset($_POST['1']) ){
+
+            $st= $stoliki[0];
+            $idSt=$st['IdStolika'];
+            $_SESSION['IdStolika'] = $idSt;
+
+
+            header('Location: /podglad_stolika');
+            exit();
+        }
+        else if (isset($_POST['2']) ){
+            $st= $stoliki[1];
+            $idSt=$st['IdStolika'];
+            $_SESSION['IdStolika'] = $idSt;
+
+
+            header('Location: /podglad_stolika');
+            exit();
+        }
+        else if (isset($_POST['3']) ){
+            $st= $stoliki[2];
+            $idSt=$st['IdStolika'];
+            $_SESSION['IdStolika'] = $idSt;
+
+
+            header('Location: /podglad_stolika');
+            exit();
+        }
+        else if(isset($_POST['4']) ){
+            $st= $stoliki[3];
+            $idSt=$st['IdStolika'];
+            $_SESSION['IdStolika'] = $idSt;
+
+
+            header('Location: /podglad_stolika');
+            exit();
+        }
+        else if (isset($_POST['5']) ){
+            $st= $stoliki[4];
+            $idSt=$st['IdStolika'];
+            $_SESSION['IdStolika'] = $idSt;
+
+
+            header('Location: /podglad_stolika');
+            exit();
+        }
+
+
 
         return $this->render('MVC/View/kelner_podglad_sali.html.twig', array(
             'imie'      => $_SESSION['imie'],

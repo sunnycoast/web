@@ -6,6 +6,7 @@ namespace MVC\Controller;
 session_start();
 use Base\App;
 use MVC\Model\Rachunek;
+use MVC\Model\Stolik;
 use Symfony\Component\HttpFoundation\Response;
 
 class GoscLogowanieController extends App
@@ -28,7 +29,7 @@ class GoscLogowanieController extends App
 
             $em = $this ->getEntityManager();
             $qb = $em   ->getRepository('MVC\Model\Stolik')->createQueryBuilder('st')
-                        ->select('st.IdStolika, st.LiczbaMiejsc,  se.NazwaSektora, se.Aktywny')
+                        ->select('st.IdStolika, st.LiczbaMiejsc, st.Zajety,  se.NazwaSektora, se.Aktywny')
                         ->innerJoin('MVC\Model\Sektor', 'se', 'WITH', 'st.IdSektora = se.IdSektora')
                         ->Where('st.KodStolika = :k_stol')
                         ->setParameter('k_stol', $k_stol)
@@ -50,7 +51,9 @@ class GoscLogowanieController extends App
                     else
                     {
                         $rachunek = new Rachunek($imie, $l_os, $stolik['IdStolika']);
+
                         $em = $this->getEntityManager();
+
                         try {
                                 $em->persist($rachunek);
                                 $em->flush();
@@ -60,7 +63,7 @@ class GoscLogowanieController extends App
                         $_SESSION['imie' ] = $imie;
                         $_SESSION['zalogowany'] = true;
                         $_SESSION['uzytkownik'] = 'Gość';
-                        $_SESSION['log_adres' ] = 'http://prztw.pl/gosc_logowanie';
+                        $_SESSION['log_adres' ] = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                         $_SESSION['currentAddress'] = "";
                         exit(header('Location: '.$imie.'/zamowienie'));
                     }

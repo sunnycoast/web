@@ -28,8 +28,13 @@ $routes->add('menu', new Route( '/menu', array(
 $routes->add('podglad_sali', new Route( '/podglad_sali', array(
     '_controller' => 'MVC\\Controller\\PodgladSaliController::indexAction'
 )));
+
 $routes->add('kelner_podglad_sali', new Route( '/kelner_podglad_sali', array(
     '_controller' => 'MVC\\Controller\\KelnerPodgladSaliController::indexAction'
+)));
+
+$routes->add('podglad_stolika', new Route( '/podglad_stolika', array(
+    '_controller' => 'MVC\\Controller\\PodgladStolikaController::indexAction'
 )));
 
 $routes->add('zamowienie', new Route( '/{imie}/zamowienie', array(
@@ -52,6 +57,14 @@ $routes->add('pracownik_logowanie', new Route( '/pracownik_logowanie', array(
 )));
 
 $routes->add('staly_klient_zaloz_konto', new Route( '/staly_klient_zaloz_konto', array(
+    '_controller' => 'MVC\\Controller\\StalyKlientZalozKontoController::indexAction'
+)));
+
+$routes->add('rezerwacje', new Route( '/{imie}/rezerwacje', array(
+    '_controller' => 'MVC\\Controller\\StalyKlientZalozKontoController::indexAction'
+)));
+
+$routes->add('rezerwacje', new Route( '/{imie}/rezerwacje/nowa', array(
     '_controller' => 'MVC\\Controller\\StalyKlientZalozKontoController::indexAction'
 )));
 
