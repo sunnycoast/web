@@ -13,10 +13,6 @@ $routes->add('staly_klient_logowanie', new Route( '/staly_klient_logowanie', arr
     '_controller' => 'MVC\\Controller\\StalyKlientLogowanieController::indexAction'
 )));
 
-$routes->add('gosc_logowanie', new Route( '/gosc_logowanie', array(
-    '_controller' => 'MVC\\Controller\\GoscLogowanieController::indexAction'
-)));
-
 $routes->add('produkty_kategorii', new Route( '/produkty_kategorii', array(
     '_controller' => 'MVC\\Controller\\ProduktyKategorii::indexAction'
 )));
@@ -28,7 +24,6 @@ $routes->add('menu', new Route( '/menu', array(
 $routes->add('podglad_sali', new Route( '/podglad_sali', array(
     '_controller' => 'MVC\\Controller\\PodgladSaliController::indexAction'
 )));
-
 $routes->add('kelner_podglad_sali', new Route( '/kelner_podglad_sali', array(
     '_controller' => 'MVC\\Controller\\KelnerPodgladSaliController::indexAction'
 )));
@@ -56,16 +51,20 @@ $routes->add('pracownik_logowanie', new Route( '/pracownik_logowanie', array(
     '_controller' => 'MVC\\Controller\\PracownikLogowanieController::indexAction'
 )));
 
+$routes->add('gosc_logowanie', new Route( '/gosc_logowanie', array(
+    '_controller' => 'MVC\\Controller\\GoscLogowanieController::indexAction'
+)));
+
 $routes->add('staly_klient_zaloz_konto', new Route( '/staly_klient_zaloz_konto', array(
     '_controller' => 'MVC\\Controller\\StalyKlientZalozKontoController::indexAction'
 )));
 
 $routes->add('rezerwacje', new Route( '/{imie}/rezerwacje', array(
-    '_controller' => 'MVC\\Controller\\StalyKlientZalozKontoController::indexAction'
+    '_controller' => 'MVC\\Controller\\RezerwacjeController::indexAction'
 )));
 
 $routes->add('rezerwacje', new Route( '/{imie}/rezerwacje/nowa', array(
-    '_controller' => 'MVC\\Controller\\StalyKlientZalozKontoController::indexAction'
+    '_controller' => 'MVC\\Controller\\RezerwacjeNowaController::indexAction'
 )));
 
 return $routes;
