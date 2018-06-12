@@ -30,8 +30,8 @@ class Rezerwacje extends App
                 //TODO get order and render add order.toArray()
                 $_SESSION['currentAddress'] = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                 $em = $this ->getEntityManager();
-                $qb = $em   ->getRepository('MVC\Model\PozycjaMenu')->createQueryBuilder('pm')
-                            ->select('p.IdKategorii, pm.IdPozycjiMenu, p.NazwaProduktu, pm.CenaBrutto, p.Opis, v.StawkaVAT')
+                $qb = $em   ->getRepository('MVC\Model\Rezerwacje')->createQueryBuilder('r')
+                            ->select('r.IdRezerwacji, r.DataRezerwacji, r.StolikWybrany, r.IdRachunku, r.IdStalegoKlienta')
                             ->innerJoin('MVC\Model\Produkt', 'p', 'WITH', 'pm.IdProduktu = p.IdProduktu')
                             ->innerJoin('MVC\Model\VAT', 'v', 'WITH', 'pm.IdVAT = v.IdVAT')
                             //->Where('p.IdKategorii < :id_k')
@@ -39,11 +39,24 @@ class Rezerwacje extends App
                             ->getQuery();
                 $reservations = ($qb->execute());
 
+                /*
+                $rachunek = new Rachunek($imie, $l_os, $stolik['IdStolika']);
+
+                $em = $this->getEntityManager();
+
+                try {
+                    $em->persist($rachunek);
+                    $em->flush();
+                } catch (\Exception $e){    return new Response($e->getMessage());    }
+
+                $_SESSION['IdRachunku'] = $rachunek->getIdRachunku();
+                //*/
+
                 $_SESSION['currentAddress'] = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                 $render = $this->render('MVC/View/zamowienie.html.twig', array(
                     'imie'         => $_SESSION['imie'],
                     'reservations' => $reservations,
-                    'log_adres' => $_SESSION['log_adres'],
+                    'log_adres'    => $_SESSION['log_adres'],
                 ));
             }
 		}
