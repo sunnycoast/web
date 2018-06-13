@@ -6,59 +6,76 @@ session_start();
 use Base\App;
 use MVC\Model\PozycjaZamowienia;
 use MVC\Model\Rachunek;
+use MVC\Model\Rezerwacje;
 use Symfony\Component\HttpFoundation\Response;
 
-class Rezerwacje extends App
+class RezerwacjeNowaController extends App
 {
     public function indexAction()
     {
-		if ( isset($_SESSION['zalogowany']) && isset($_SESSION['IdRachunku']) )
-		{
-            if(isset($_SESSION['currentAddress'])
-                && $_SESSION['currentAddress']!==""
-                && $_SESSION['currentAddress']!=="http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]")
-                exit(header('Location: ' .$_SESSION['currentAddress']));
-            if(isset($_POST['clearSession']))
+        $err = "";
+        if(!empty($_SESSION))
+        {
+            if(!empty($_POST))
             {
-                $url = $_SESSION['log_adres'];
-                session_unset();
-                session_destroy();
-                exit(header('Location: '.$url ));
-            }
-            else
-            {
-                //TODO get order and render add order.toArray()
-                $_SESSION['currentAddress'] = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+                $date 	         = $_POST["date"];
+                $time 	         = $_POST["time"];
+                $numberOfPeople = $_POST["numberOfPeople"];
+                $visitTime 	     = $_POST["visitTime"];
+                $sector 	     = $_POST["sector"];
+                $tableNumber 	 = $_POST["tableNumber"];
+
                 $em = $this ->getEntityManager();
-                $qb = $em   ->getRepository('MVC\Model\Rezerwacje')->createQueryBuilder('r')
-                            ->select('r.IdRezerwacji, r.DataRezerwacji, r.StolikWybrany, r.IdRachunku, r.IdStalegoKlienta')
-                            ->innerJoin('MVC\Model\Produkt', 'p', 'WITH', 'pm.IdProduktu = p.IdProduktu')
-                            ->innerJoin('MVC\Model\VAT', 'v', 'WITH', 'pm.IdVAT = v.IdVAT')
-                            //->Where('p.IdKategorii < :id_k')
-                            //->setParameter('id_k',$id_k)
+                $qb = $em   ->getRepository('MVC\Model\Stolik')->createQueryBuilder('st')
+                            ->select('st.IdStolika, st.IdSektora, st.LiczbaMiejsc')
+                            ->Where('st.IdStolika = :id_stol')
+                            ->andWhere('st.IdSektora = :id_sec')
+                            ->setParameter('id_stol', $tableNumber)
+                            ->setParameter('id_sec', $sector)
                             ->getQuery();
-                $reservations = ($qb->execute());
 
-                /*
-                $rachunek = new Rachunek($imie, $l_os, $stolik['IdStolika']);
+                $stoliki = ($qb->execute());
 
-                $em = $this->getEntityManager();
+                if(empty($stoliki))
+                {    $err = 'Niepoprawny numer stolika';    }
+                else
+                {
+                    $stolik = $stoliki[0];
+                    if ($numberOfPeople <= ($stolik['LiczbaMiejsc']-2))
+                    {    $err="Przepraszamy stolik jest przeznaczony dla większej liczby osób. Uprzejmie prosimy o zmianę na mnieszy.";    }
+                    else
+                    {
+                        $rachunek = new Rachunek($_SESSION['imie'], $numberOfPeople, $stolik['IdStolika']);
 
-                try {
-                    $em->persist($rachunek);
-                    $em->flush();
-                } catch (\Exception $e){    return new Response($e->getMessage());    }
+                        $em = $this->getEntityManager();
 
-                $_SESSION['IdRachunku'] = $rachunek->getIdRachunku();
-                //*/
-
-                $_SESSION['currentAddress'] = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-                $render = $this->render('MVC/View/zamowienie.html.twig', array(
-                    'imie'         => $_SESSION['imie'],
-                    'reservations' => $reservations,
-                    'log_adres'    => $_SESSION['log_adres'],
-                ));
+                        try {
+                            $em->persist($rachunek);
+                            $em->flush();
+                            $rezerwacja = new Rezerwacje(($date.' '.$time.':00'), $rachunek->getIdRachunku(), $_SESSION['customerID']);
+                            $em->persist($rezerwacja);
+                            $em->flush();
+                        } catch (\Exception $e){    return new Response($e->getMessage());    }
+                        exit(header('Location: /'));
+                    }
+                }
             }
+            $em = $this ->getEntityManager();
+            $qb = $em   ->getRepository('MVC\Model\Sektor')->createQueryBuilder('sk')
+                        ->select('sk.IdSektora', 'sk.NazwaSektora')
+                        ->getQuery();
+            $sectors = ($qb->execute());
+
+            $qb = $em   ->getRepository('MVC\Model\Stolik')->createQueryBuilder('s')
+                        ->select('s.IdStolika', 's.NazwaStolika', 's.KodStolika', 's.LiczbaMiejsc', 's.IdSektora')
+                        ->getQuery();
+            $tables = ($qb->execute());
+
+            $render = $this->render('MVC/View/rezerwacjeNowa.html.twig', array(
+                'sectors'      => $sectors,
+                'tables'       => $tables,
+                'err'          => $err
+        ));
 		}
 		else
             exit(header('Location: /'));

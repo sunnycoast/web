@@ -15,18 +15,17 @@ class RezerwacjeController extends App
 		if (!empty($_SESSION))
 		{
             $_SESSION['currentAddress'] = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-            $id = $_SESSION['customerID'];
             $em = $this ->getEntityManager();
             $qb = $em   ->getRepository('MVC\Model\Rezerwacje')->createQueryBuilder('r')
-                        ->select('r.IdRezerwacji', 'r.DataRezerwacji', 'r.StolikWybrany', 'r.IdRachunku', 'r.IdStalegoKlienta', 's.IdStolika', 'se.NazwaSektora')
+                        ->select('r.IdRezerwacji', 'r.DataRezerwacji', 'r.StolikWybrany', 'ra.IdRachunku', 'ra.LiczbaOsob', 'r.IdStalegoKlienta', 's.IdStolika', 'se.NazwaSektora')
                         ->innerJoin('MVC\Model\Rachunek', 'ra', 'WITH', 'r.IdRachunku = ra.IdRachunku')
                         ->innerJoin('MVC\Model\Stolik', 's', 'WITH', 'ra.IdStolika = s.IdStolika')
                         ->innerJoin('MVC\Model\Sektor', 'se', 'WITH', 's.IdSektora = se.IdSektora')
                         ->Where('r.IdStalegoKlienta = :id_k')
-                        ->setParameter('id_k', $id)
+                        ->setParameter('id_k', $_SESSION['customerID'])
                         ->getQuery();
             $reservations = ($qb->execute());
-
+            //print_r($reservations);
             $_SESSION['currentAddress'] = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
             $render = $this->render('MVC/View/rezerwacje.html.twig', array(
                 'imie'         => $_SESSION['imie'],
