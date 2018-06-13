@@ -29,7 +29,7 @@ class ParentDummy
     public $foo2;
 
     /**
-     * @var callback
+     * @var callable
      */
     public $foo3;
 
@@ -73,6 +73,13 @@ class ParentDummy
      * @param \DateTime $f
      */
     public function removeF(\DateTime $f)
+    {
+    }
+
+    /**
+     * @return bool|null
+     */
+    public function hasG()
     {
     }
 }

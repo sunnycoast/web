@@ -11,6 +11,7 @@
 
 namespace Symfony\Bundle\MakerBundle\Doctrine;
 
+use Doctrine\Common\Persistence\Mapping\MappingException as CommonMappingException;
 use Doctrine\ORM\Mapping\ClassMetadata;
 use Doctrine\ORM\Mapping\MappingException;
 use Symfony\Bundle\MakerBundle\Exception\RuntimeCommandException;
@@ -27,15 +28,13 @@ final class EntityRegenerator
     private $doctrineHelper;
     private $fileManager;
     private $generator;
-    private $projectDirectory;
     private $overwrite;
 
-    public function __construct(DoctrineHelper $doctrineHelper, FileManager $fileManager, Generator $generator, string $projectDirectory, bool $overwrite)
+    public function __construct(DoctrineHelper $doctrineHelper, FileManager $fileManager, Generator $generator, bool $overwrite)
     {
         $this->doctrineHelper = $doctrineHelper;
         $this->fileManager = $fileManager;
         $this->generator = $generator;
-        $this->projectDirectory = $projectDirectory;
         $this->overwrite = $overwrite;
     }
 
@@ -43,7 +42,7 @@ final class EntityRegenerator
     {
         try {
             $metadata = $this->doctrineHelper->getMetadata($classOrNamespace);
-        } catch (MappingException $mappingException) {
+        } catch (MappingException | CommonMappingException $mappingException) {
             $metadata = $this->doctrineHelper->getMetadata($classOrNamespace, true);
         }
 
@@ -64,6 +63,8 @@ final class EntityRegenerator
             } else {
                 $classPath = $this->getPathOfClass($classMetadata->name);
             }
+
+            $mappedFields = $this->getMappedFieldsInEntity($classMetadata);
 
             if ($classMetadata->customRepositoryClassName) {
                 $this->generateRepository($classMetadata);
@@ -94,11 +95,15 @@ final class EntityRegenerator
                     continue;
                 }
 
+                if (!in_array($fieldName, $mappedFields)) {
+                    continue;
+                }
+
                 $manipulator->addEntityField($fieldName, $mapping);
             }
 
             $getIsNullable = function (array $mapping) {
-                if (!isset($mapping['joinColumns'][0]) || !isset($mapping['joinColumns'][0]['nullable'])) {
+                if (!isset($mapping['joinColumns'][0]['nullable'])) {
                     // the default for relationships IS nullable
                     return true;
                 }
@@ -107,6 +112,10 @@ final class EntityRegenerator
             };
 
             foreach ($classMetadata->associationMappings as $fieldName => $mapping) {
+                if (!in_array($fieldName, $mappedFields)) {
+                    continue;
+                }
+
                 switch ($mapping['type']) {
                     case ClassMetadata::MANY_TO_ONE:
                         $relation = (new RelationManyToOne())
@@ -225,5 +234,37 @@ final class EntityRegenerator
         );
 
         $this->generator->writeChanges();
+    }
+
+    private function getMappedFieldsInEntity(ClassMetadata $classMetadata)
+    {
+        /* @var $classReflection \ReflectionClass */
+        $classReflection = $classMetadata->reflClass;
+
+        $targetFields = array_merge(
+            array_keys($classMetadata->fieldMappings),
+            array_keys($classMetadata->associationMappings)
+        );
+
+        if ($classReflection) {
+            // exclude traits
+            $traitProperties = [];
+
+            foreach ($classReflection->getTraits() as $trait) {
+                foreach ($trait->getProperties() as $property) {
+                    $traitProperties[] = $property->getName();
+                }
+            }
+
+            $targetFields = array_diff($targetFields, $traitProperties);
+
+            // exclude inherited properties
+            $targetFields = array_filter($targetFields, function ($field) use ($classReflection) {
+                return $classReflection->hasProperty($field) &&
+                    $classReflection->getProperty($field)->getDeclaringClass()->getName() == $classReflection->getName();
+            });
+        }
+
+        return $targetFields;
     }
 }
