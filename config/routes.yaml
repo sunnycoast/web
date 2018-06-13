@@ -1,0 +1,60 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+#app_lucky_number:
+#    path: /lucky/number
+#    controller: App\Controller\LuckyController::number
+
+index:
+      path: /
+      controller: App\Controller\StartController::indexAction
+
+staly_klient_logowanie:
+      path: /staly_klient_logowanie
+      controller: App\Controller\\StalyKlientLogowanieController::indexAction
+
+gosc_logowanie:
+      path: /gosc_logowanie
+      controller: App\Controller\\GoscLogowanieController::indexAction
+
+menu:
+      path: /menu
+      controller: App\Controller\\MenuController::indexAction
+
+podglad_sali:
+      path: /podglad_sali
+      controller: App\Controller\\PodgladSaliController::indexAction
+
+kelner_podglad_sali:
+      path: /kelner_podglad_sali
+      controller: App\Controller\\KelnerPodgladSaliController::indexAction
+
+pracownik_logowanie:
+      path: /pracownik_logowanie
+      controller: App\Controller\\PracownikLogowanieController::indexAction
+
+staly_klient_zaloz_konto:
+      path: /staly_klient_zaloz_konto
+      controller: App\Controller\\StalyKlientZalozKontoController::indexAction
+
+produkty_kategorii:
+      path: /produkty_kategorii
+      controller: App\Controller\\ProduktyKategorii::indexAction
+
+zamowienie:
+      path: /{imie}/zamowienie
+      controller: App\Controller\\ZamowienieController::indexAction
+      defaults:
+            imie: ''
+
+podsumowanie:
+      path: /{imie}/zemowienie/podsumowanie
+      controller: App\Controller\\ZamowieniePodsumowanieController::indexAction
+      defaults:
+            imie: ''
+
+zakoncz:
+      path: /{imie}/zamowienie/podsumowanie/zamkniecie/rachunku
+      controller: App\Controller\\ZZamowienieZakonczController::indexAction
+      defaults:
+            imie: ''

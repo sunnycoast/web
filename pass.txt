@@ -1,0 +1,7 @@
+ ------------------ --------------------------------------------------------------- 
+ [32m Key              [39m [32m Value                                                         [39m 
+ ------------------ --------------------------------------------------------------- 
+  Encoder used       Symfony\Component\Security\Core\Encoder\BCryptPasswordEncoder  
+  Encoded password   $2y$13$Lif23BiXuRgBja5i/sgE1O6odyAjL7WtbvjD/3RHMkWdrlgoX9t6i   
+ ------------------ --------------------------------------------------------------- 
+

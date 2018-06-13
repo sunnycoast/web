@@ -1,0 +1,21 @@
+{% extends 'Layouts/login.html.twig' %}
+
+{% block target %}
+    /staly_klient_logowanie
+{% endblock %}
+
+{% block form %}
+    <div class="nf">e-mail:</div>
+    <input class="yI" type="email" name="email" value="{{ email }}" autocomplete="off" required autofocus><br/>
+
+    <div class="nf">hasło:</div>
+    <input class="yI" type="password" name="haslo" value="" autocomplete="off" required><br/>
+{% endblock %}
+
+{% block register %}
+    <div  class="my_form c">
+    <div class="nf">Nie masz konta? Zarejestruj się!</div>
+        <div> <input class="yII" type="button" value="Stwórz konto" onclick="window.location.href='/staly_klient_zaloz_konto';"></div>
+    </div>
+{% endblock %}
+
