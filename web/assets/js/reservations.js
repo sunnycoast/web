@@ -63,9 +63,42 @@ function getIdNum(id)
 
 function calendar(id)
 {
+    let clinetID = '289442566333-24jt321jartmei9o38q7e5u4ke2r3jf7.apps.googleusercontent.com';
     let r = aReservations[id];
     console.log("Obiad w Projekt Restauracja"+' '+r["date"]+" "+r["time"]);
-    location
+
+    let event = {
+        'summary': "Obiad w Projekt Restauracja",
+        'location': '800 Howard St., San Francisco, CA 94103',
+        'description': "Obiad w Projekt Restauracja",
+        'start': {
+            'dateTime': r["date"]+'T09:00:00-07:00',
+            'timeZone': 'America/Los_Angeles'
+        },
+        'end': {
+            'dateTime': r["date"]+'T17:00:00-07:00',
+            'timeZone': 'America/Los_Angeles'
+        },
+        'attendees': [
+            {'email': 'ka3.sledz@gmail.com'},
+        ],
+        'reminders': {
+            'useDefault': false,
+            'overrides': [
+                {'method': 'email', 'minutes': 24 * 60},
+                {'method': 'popup', 'minutes': 10}
+            ]
+        }
+    };
+
+    let request = gapi.client.calendar.events.insert({
+        'calendarId': 'primary',
+        'resource': event
+    });
+
+    request.execute(function(event) {
+        appendPre('Event created: ' + event.htmlLink);
+    });
 }
 //*/
 function back()

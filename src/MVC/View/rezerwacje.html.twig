@@ -6,7 +6,7 @@
     <script>
         let aReservations = [];
         {% for r in reservations %}
-        aReservations[{{ r.IdRezerwacji }}] = {"date":"{{ r.DataRezerwacji|date('d-m-Y') }}", "time":"{{ r.DataRezerwacji|date('h:i') }}", "persons":{{ r.LiczbaOsob }}, "bill":{{ r.IdRachunku }},
+        aReservations[{{ r.IdRezerwacji }}] = {"date":"{{ r.DataRezerwacji|date('Y-m-d') }}", "time":"{{ r.DataRezerwacji|date('h:i') }}", "persons":{{ r.LiczbaOsob }}, "bill":{{ r.IdRachunku }},
             "table":{{ r.IdStolika }}, "sector":"{{ r.NazwaSektora }}"};
         {% endfor %}
     </script>
