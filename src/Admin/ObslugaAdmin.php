@@ -37,7 +37,12 @@ class ObslugaAdmin extends AbstractAdmin
         $list
             ->addIdentifier('IdRachunku')
             ->add('IdPracownika')
-            ->add('DataOtwarcia');
+            ->add('DataOtwarcia')
+            ->add('_action','actions',array(
+            'actions' =>array(
+            'edit' =>array()
+            )
+        ));
     }
 
 }

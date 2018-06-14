@@ -104,7 +104,7 @@ class Rachunek implements \Serializable
     {    $this->DataOtwarcia = new \DateTime();    }
 
     public function setDataOtwarcia($dateTime)
-    {    $this->DataOtwarcia = new \DateTime($dateTime);    }
+    {    $this->DataOtwarcia = $dateTime;    }
 
     public function getDataZamkniecia()
     {    return $this->DataZamkniecia;    }
@@ -113,7 +113,7 @@ class Rachunek implements \Serializable
     {    $this->DataZamkniecia = new \DateTime();    }
 
     public function setDataZamkniecia($dateTime)
-    {    $this->DataZamkniecia = new \DateTime($dateTime);    }
+    {    $this->DataZamkniecia =$dateTime;    }
 
     public function getUwagiPracownika()
     {    return $this->UwagiPracownika;    }
