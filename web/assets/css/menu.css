@@ -1,0 +1,134 @@
+.box
+{
+    padding-left: 4%;
+    padding-right: 4%;
+    width: 	96%;
+    height: 100%;
+    -webkit-box-orient: horizontal;
+}
+
+
+
+.cBattonNavKat
+{
+    position: relative;
+    background-color: steelblue;
+    color: black;
+    padding: 16px;
+    font-size: 16px;
+    width: 49.5%;
+    height: 10%;
+    cursor: pointer;
+    border-top-right-radius: 50px;
+    border-top-left-radius:  10px;
+}
+
+.cBattonNavZam
+{
+    position: relative;
+    background-color: #c2881a;
+    padding: 16px;
+    font-size: 16px;
+    width: 49.5%;
+    height: 10%;
+    cursor: pointer;
+    border-top-right-radius: 50px;
+    border-top-left-radius:  10px;
+}
+
+.f1Batton
+{
+    margin-left: 2%;
+    width: 42%;
+    position: relative;
+    background-color: gray;
+    color: black;
+    padding: 16px;
+    font-size: 24px;
+    height: 50px;
+    cursor: pointer;
+    border-radius: 10px;
+    border-style: none;
+    box-shadow: 4px 4px #666666;
+}
+
+.f2Batton
+{
+    top: -50px;
+    margin-left: 46%;
+    width: 42%;
+    position: relative;
+    background-color: red;
+    color: black;
+    padding: 16px;
+    font-size: 16px;
+    height: 50px;
+    cursor: pointer;
+    border-radius: 10px;
+    border-style: none;
+    box-shadow: 4px 4px #666666;
+}
+
+.nav
+{
+    position: relative;
+    overflow: hidden;
+    height: 54px;
+}
+
+.cBattonKat
+{
+    margin:2%;
+    width:20%;
+    height:12%;
+    border-radius: 5px;
+    cursor: pointer;
+    border-style: none;
+    box-shadow: 4px 4px #25232380;
+    font-size: large;
+    background-color: rgba(164, 23, 2, 0.7);
+}
+
+.pZam
+{
+    height: 538px;
+    border: 3px solid #c2881a;
+}
+
+.pKat
+{
+    overflow-y: scroll;
+    height: 600px;
+}
+
+#pZaP
+{
+    margin-top: 200px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.yII
+{
+    font-size: 20px;
+    padding: 7px;
+    padding-right: 15px;
+    padding-left: 15px;
+    border-radius: 20px;
+    background-color: red;
+    margin-top: 20px;
+    border-style: none;
+    box-shadow: 3px 3px #AA000088;
+
+}
+
+.my_form
+{
+    clear: both;
+    min-height:90px;
+}
+
+.cKategoria:hover .cDivOp
+{
+    visibility: visible;
+}

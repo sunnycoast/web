@@ -5,12 +5,12 @@
 {% endblock %}
 
 {% block form %}
-    <div class="nf">Imię:</div>
-    <input class="yI" type="text" name="imie" value="{{ imie }}" autocomplete="off" required><br/>
 
-    <div class="nf">Liczba osób:</div>
-    <input class="yI" type="number" name="l_os" value="{{ l_os }}" autocomplete="off" required min="1"><br/>
+    <input class="yI" type="text" name="imie" placeholder="Imię" value="{{ imie }}" autocomplete="off" required><br/>
 
-    <div class="nf">Kod stolika: </div>
-    <input class="yI" type="text" name="k_stol" value="{{ k_stol }}" autocomplete="off" required><br/>
+    <input class="yI" type="number" name="l_os" placeholder="Liczba osób" value="{{ l_os }}" autocomplete="off" required><br/>
+
+    <input class="yI" type="text" name="k_stol" placeholder="Kod stolika" value="{{ k_stol }}" autocomplete="off" required><br/>
+
 {% endblock %}
+
