@@ -3,7 +3,7 @@ $('#backButton')    .click( function () {back()} );
 $('#mainBox').addClass('box, c');
 $('#categoryMainBox').addClass('kat');
 $('#pKat').addClass('pKat');
-createReservationsTable();
+//window.onLoadCallback = createReservationsTable();
 
 function newReservation()
 { window.location = window.location+'/nowa'; }
@@ -24,7 +24,53 @@ function createReservationsTable()
     let nr = 0;
     for(let r in aReservations)
         appendReservation(nr++, r, aReservations[r])
+
+    initClient();
 }
+function handleClientLoad() {
+    gapi.load('client:auth2', initClient);
+}
+function initClient() {
+    gapi.client.init({
+        apiKey: "AIzaSyDvjg8wCQr0umr9Ys-rhW_swowUxocMneY",
+        clientId: "774147647679-h8eddhds2mgohd2g5i8hvfd53o8eg2as.apps.googleusercontent.com",
+        discoveryDocs: ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"],
+        scope: "https://www.googleapis.com/auth/calendar.readonly"
+    }).then(function () {
+        // Listen for sign-in state changes.
+        gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
+
+        // Handle the initial sign-in state.
+        updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
+        authorizeButton.onclick = handleAuthClick;
+        signoutButton.onclick = handleSignoutClick;
+    });
+}
+function updateSigninStatus(isSignedIn) {
+    if (isSignedIn) {
+        //authorizeButton.style.display = 'none';
+        //signoutButton.style.display = 'block';
+        listUpcomingEvents();
+    } else {
+        //authorizeButton.style.display = 'block';
+        //signoutButton.style.display = 'none';
+    }
+}
+
+/**
+ *  Sign in the user upon button click.
+ */
+function handleAuthClick(event) {
+    gapi.auth2.getAuthInstance().signIn();
+}
+
+/**
+ *  Sign out the user upon button click.
+ */
+function handleSignoutClick(event) {
+    gapi.auth2.getAuthInstance().signOut();
+}
+
 
 function appendReservation(nr, reservationID, reservation)
 {

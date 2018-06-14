@@ -10,6 +10,11 @@
             "table":{{ r.IdStolika }}, "sector":"{{ r.NazwaSektora }}"};
         {% endfor %}
     </script>
+    <script async defer src="https://apis.google.com/js/api.js"
+            onload="this.onload=function(){};handleClientLoad()">
+    </script>
+    <script type="text/javascript" src="{{ asset('js/reservations.js') }}">
+    </script>
     <style>
 
         .box
