@@ -3,7 +3,8 @@ $('#backButton')    .click( function () {back()} );
 $('#mainBox').addClass('box, c');
 $('#categoryMainBox').addClass('kat');
 $('#pKat').addClass('pKat');
-//window.onLoadCallback = createReservationsTable();
+//window.onLoadCallback =
+createReservationsTable();
 
 function newReservation()
 { window.location = window.location+'/nowa'; }
@@ -25,52 +26,7 @@ function createReservationsTable()
     for(let r in aReservations)
         appendReservation(nr++, r, aReservations[r])
 
-    initClient();
 }
-function handleClientLoad() {
-    gapi.load('client:auth2', initClient);
-}
-function initClient() {
-    gapi.client.init({
-        apiKey: "AIzaSyDvjg8wCQr0umr9Ys-rhW_swowUxocMneY",
-        clientId: "774147647679-h8eddhds2mgohd2g5i8hvfd53o8eg2as.apps.googleusercontent.com",
-        discoveryDocs: ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"],
-        scope: "https://www.googleapis.com/auth/calendar.readonly"
-    }).then(function () {
-        // Listen for sign-in state changes.
-        gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
-
-        // Handle the initial sign-in state.
-        updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
-        authorizeButton.onclick = handleAuthClick;
-        signoutButton.onclick = handleSignoutClick;
-    });
-}
-function updateSigninStatus(isSignedIn) {
-    if (isSignedIn) {
-        //authorizeButton.style.display = 'none';
-        //signoutButton.style.display = 'block';
-        listUpcomingEvents();
-    } else {
-        //authorizeButton.style.display = 'block';
-        //signoutButton.style.display = 'none';
-    }
-}
-
-/**
- *  Sign in the user upon button click.
- */
-function handleAuthClick(event) {
-    gapi.auth2.getAuthInstance().signIn();
-}
-
-/**
- *  Sign out the user upon button click.
- */
-function handleSignoutClick(event) {
-    gapi.auth2.getAuthInstance().signOut();
-}
-
 
 function appendReservation(nr, reservationID, reservation)
 {
@@ -109,24 +65,24 @@ function getIdNum(id)
 
 function calendar(id)
 {
-    let clinetID = '289442566333-24jt321jartmei9o38q7e5u4ke2r3jf7.apps.googleusercontent.com';
-    let r = aReservations[id];
-    console.log("Obiad w Projekt Restauracja"+' '+r["date"]+" "+r["time"]);
-
-    let event = {
-        'summary': "Obiad w Projekt Restauracja",
-        'location': '800 Howard St., San Francisco, CA 94103',
-        'description': "Obiad w Projekt Restauracja",
+    var event = {
+        'summary': 'Rezerwacja w restauracji',
+        'location': 'Restauracja',
+        'description': 'Zarezerwowano stolik w restauracji. '+ id,
         'start': {
-            'dateTime': r["date"]+'T09:00:00-07:00',
+            'dateTime': '2019-05-28T09:00:00-07:00',
             'timeZone': 'America/Los_Angeles'
         },
         'end': {
-            'dateTime': r["date"]+'T17:00:00-07:00',
+            'dateTime': '2019-05-28T17:00:00-07:00',
             'timeZone': 'America/Los_Angeles'
         },
+        'recurrence': [
+        //    'RRULE:FREQ=DAILY;COUNT=2'
+        ],
         'attendees': [
-            {'email': 'ka3.sledz@gmail.com'},
+        //    {'email': 'lpage@example.com'},
+        //    {'email': 'sbrin@example.com'}
         ],
         'reminders': {
             'useDefault': false,
@@ -137,7 +93,7 @@ function calendar(id)
         }
     };
 
-    let request = gapi.client.calendar.events.insert({
+    var request = gapi.client.calendar.events.insert({
         'calendarId': 'primary',
         'resource': event
     });
