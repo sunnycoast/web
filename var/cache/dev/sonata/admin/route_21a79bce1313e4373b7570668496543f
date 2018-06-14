@@ -1,0 +1,1 @@
+a:7:{s:14:"admin.vat.list";s:18:"admin_app_vat_list";s:16:"admin.vat.create";s:20:"admin_app_vat_create";s:15:"admin.vat.batch";s:19:"admin_app_vat_batch";s:14:"admin.vat.edit";s:18:"admin_app_vat_edit";s:16:"admin.vat.delete";s:20:"admin_app_vat_delete";s:14:"admin.vat.show";s:18:"admin_app_vat_show";s:16:"admin.vat.export";s:20:"admin_app_vat_export";}

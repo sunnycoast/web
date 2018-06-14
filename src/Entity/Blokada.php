@@ -65,6 +65,16 @@ class Blokada implements \Serializable
         $this->IdPozycjiMenu    = $IdPozycjiMenu;
     }
 
+//    public function __construct ($Powod, $IdPozycjiMenu, $DataWycofania, $DataWprowadzenia,$IdPracownika,$IdBlokady)
+//    {
+//        $this->Powod   = $Powod;
+//        $this->IdPozycjiMenu    = $IdPozycjiMenu;
+//        $this->DataWycofania   = $DataWycofania;
+//        $this->DataWprowadzenia    = $DataWprowadzenia;
+//        $this->IdPracownika   = $IdPracownika;
+//        $this->IdBlokady    = $IdBlokady;
+//    }
+
     public function getIdBlokady()
     {    return $this->IdBlokady;    }
 

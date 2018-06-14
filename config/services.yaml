@@ -4,6 +4,112 @@ parameters:
     locale: 'en'
 
 services:
+
+#    admin.blokada:
+#        class: App\Admin\BlokadaAdmin
+#        arguments: [~, App\Entity\Blokada, ~]
+#        tags:
+#            - { name: sonata.admin, manager_type: orm, label: Blokada }
+#        public: true
+
+    admin.obsluga:
+        class: App\Admin\ObslugaAdmin
+        arguments: [~, App\Entity\Obsluga, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: Obsluga }
+        public: true
+
+    admin.osoba:
+        class: App\Admin\OsobaAdmin
+        arguments: [~, App\Entity\Osoba, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: Osoba }
+        public: true
+
+    admin.pozycja_zamowienia:
+        class: App\Admin\PozycjaZamowieniaAdmin
+        arguments: [~, App\Entity\PozycjaZamowienia, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: PozycjaZamowienia }
+        public: true
+
+    admin.pracownik:
+        class: App\Admin\PracownikAdmin
+        arguments: [~, App\Entity\Pracownik, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: Pracownik }
+        public: true
+
+    admin.produkt:
+        class: App\Admin\ProduktAdmin
+        arguments: [~, App\Entity\Produkt, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: Produkt }
+        public: true
+
+    admin.rachunek:
+        class: App\Admin\RachunekAdmin
+        arguments: [~, App\Entity\Rachunek, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: Rachunek }
+        public: true
+
+    admin.rezerwacja:
+        class: App\Admin\RezerwacjaAdmin
+        arguments: [~, App\Entity\Rezerwacje, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: Rezerwacje }
+        public: true
+
+    admin.rola:
+        class: App\Admin\RolaAdmin
+        arguments: [~, App\Entity\Rola, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: Rola }
+        public: true
+
+    admin.pozycja_menu:
+        class: App\Admin\PozycjaMenuAdmin
+        arguments: [~, App\Entity\PozycjaMenu, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: PozycjaMenu }
+        public: true
+
+    admin.kategoria:
+        class: App\Admin\KategoriaAdmin
+        arguments: [~, App\Entity\Kategoria, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: Kategoria }
+        public: true
+
+    admin.sektor:
+        class: App\Admin\SektorAdmin
+        arguments: [~, App\Entity\Sektor, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: Sektor }
+        public: true
+
+    admin.staly_klient:
+        class: App\Admin\StalyKlientAdmin
+        arguments: [~, App\Entity\StalyKlient, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: StalyKlient }
+        public: true
+
+    admin.stolik:
+        class: App\Admin\StolikAdmin
+        arguments: [~, App\Entity\Stolik, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: Stolik }
+        public: true
+
+    admin.vat:
+        class: App\Admin\VatAdmin
+        arguments: [~, App\Entity\VAT, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: VAT }
+        public: true
+
     # default configuration for services in *this* file
     _defaults:
         autowire: true      # Automatically injects dependencies in your services.
