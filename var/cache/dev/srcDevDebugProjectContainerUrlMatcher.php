@@ -115,6 +115,14 @@ class srcDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                     '/admin/core/set-object-field-value' => array(array('_route' => 'sonata_admin_set_object_field_value', '_controller' => 'sonata.admin.controller.admin::setObjectFieldValueAction'), null, null, null),
                     '/admin/search' => array(array('_route' => 'sonata_admin_search', '_controller' => 'Sonata\\AdminBundle\\Controller\\CoreController::searchAction'), null, null, null),
                     '/admin/core/get-autocomplete-items' => array(array('_route' => 'sonata_admin_retrieve_autocomplete_items', '_controller' => 'sonata.admin.controller.admin::retrieveAutocompleteItemsAction'), null, null, null),
+                    '/admin/app/blokada/list' => array(array('_route' => 'admin_app_blokada_list', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::listAction', '_sonata_admin' => 'admin.blokada', '_sonata_name' => 'admin_app_blokada_list'), null, null, null),
+                    '/admin/app/blokada/create' => array(array('_route' => 'admin_app_blokada_create', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::createAction', '_sonata_admin' => 'admin.blokada', '_sonata_name' => 'admin_app_blokada_create'), null, null, null),
+                    '/admin/app/blokada/batch' => array(array('_route' => 'admin_app_blokada_batch', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::batchAction', '_sonata_admin' => 'admin.blokada', '_sonata_name' => 'admin_app_blokada_batch'), null, null, null),
+                    '/admin/app/blokada/export' => array(array('_route' => 'admin_app_blokada_export', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::exportAction', '_sonata_admin' => 'admin.blokada', '_sonata_name' => 'admin_app_blokada_export'), null, null, null),
+                    '/admin/app/kategoria/list' => array(array('_route' => 'admin_app_kategoria_list', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::listAction', '_sonata_admin' => 'admin.kategoria', '_sonata_name' => 'admin_app_kategoria_list'), null, null, null),
+                    '/admin/app/kategoria/create' => array(array('_route' => 'admin_app_kategoria_create', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::createAction', '_sonata_admin' => 'admin.kategoria', '_sonata_name' => 'admin_app_kategoria_create'), null, null, null),
+                    '/admin/app/kategoria/batch' => array(array('_route' => 'admin_app_kategoria_batch', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::batchAction', '_sonata_admin' => 'admin.kategoria', '_sonata_name' => 'admin_app_kategoria_batch'), null, null, null),
+                    '/admin/app/kategoria/export' => array(array('_route' => 'admin_app_kategoria_export', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::exportAction', '_sonata_admin' => 'admin.kategoria', '_sonata_name' => 'admin_app_kategoria_export'), null, null, null),
                     '/admin/app/obsluga/list' => array(array('_route' => 'admin_app_obsluga_list', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::listAction', '_sonata_admin' => 'admin.obsluga', '_sonata_name' => 'admin_app_obsluga_list'), null, null, null),
                     '/admin/app/obsluga/create' => array(array('_route' => 'admin_app_obsluga_create', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::createAction', '_sonata_admin' => 'admin.obsluga', '_sonata_name' => 'admin_app_obsluga_create'), null, null, null),
                     '/admin/app/obsluga/batch' => array(array('_route' => 'admin_app_obsluga_batch', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::batchAction', '_sonata_admin' => 'admin.obsluga', '_sonata_name' => 'admin_app_obsluga_batch'), null, null, null),
@@ -151,10 +159,6 @@ class srcDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                     '/admin/app/pozycjamenu/create' => array(array('_route' => 'admin_app_pozycjamenu_create', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::createAction', '_sonata_admin' => 'admin.pozycja_menu', '_sonata_name' => 'admin_app_pozycjamenu_create'), null, null, null),
                     '/admin/app/pozycjamenu/batch' => array(array('_route' => 'admin_app_pozycjamenu_batch', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::batchAction', '_sonata_admin' => 'admin.pozycja_menu', '_sonata_name' => 'admin_app_pozycjamenu_batch'), null, null, null),
                     '/admin/app/pozycjamenu/export' => array(array('_route' => 'admin_app_pozycjamenu_export', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::exportAction', '_sonata_admin' => 'admin.pozycja_menu', '_sonata_name' => 'admin_app_pozycjamenu_export'), null, null, null),
-                    '/admin/app/kategoria/list' => array(array('_route' => 'admin_app_kategoria_list', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::listAction', '_sonata_admin' => 'admin.kategoria', '_sonata_name' => 'admin_app_kategoria_list'), null, null, null),
-                    '/admin/app/kategoria/create' => array(array('_route' => 'admin_app_kategoria_create', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::createAction', '_sonata_admin' => 'admin.kategoria', '_sonata_name' => 'admin_app_kategoria_create'), null, null, null),
-                    '/admin/app/kategoria/batch' => array(array('_route' => 'admin_app_kategoria_batch', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::batchAction', '_sonata_admin' => 'admin.kategoria', '_sonata_name' => 'admin_app_kategoria_batch'), null, null, null),
-                    '/admin/app/kategoria/export' => array(array('_route' => 'admin_app_kategoria_export', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::exportAction', '_sonata_admin' => 'admin.kategoria', '_sonata_name' => 'admin_app_kategoria_export'), null, null, null),
                     '/admin/app/sektor/list' => array(array('_route' => 'admin_app_sektor_list', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::listAction', '_sonata_admin' => 'admin.sektor', '_sonata_name' => 'admin_app_sektor_list'), null, null, null),
                     '/admin/app/sektor/create' => array(array('_route' => 'admin_app_sektor_create', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::createAction', '_sonata_admin' => 'admin.sektor', '_sonata_name' => 'admin_app_sektor_create'), null, null, null),
                     '/admin/app/sektor/batch' => array(array('_route' => 'admin_app_sektor_batch', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::batchAction', '_sonata_admin' => 'admin.sektor', '_sonata_name' => 'admin_app_sektor_batch'), null, null, null),
@@ -207,113 +211,118 @@ class srcDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                     .'|/admin/(?'
                         .'|core/get\\-short\\-object\\-description(?:\\.(html|json))?(*:98)'
                         .'|app/(?'
+                            .'|blokada/([^/]++)/(?'
+                                .'|edit(*:136)'
+                                .'|delete(*:150)'
+                                .'|show(*:162)'
+                            .')'
+                            .'|kategoria/([^/]++)/(?'
+                                .'|edit(*:197)'
+                                .'|delete(*:211)'
+                                .'|show(*:223)'
+                            .')'
                             .'|o(?'
                                 .'|bsluga/([^/]++)/(?'
-                                    .'|edit(*:139)'
-                                    .'|delete(*:153)'
-                                    .'|show(*:165)'
+                                    .'|edit(*:259)'
+                                    .'|delete(*:273)'
+                                    .'|show(*:285)'
                                 .')'
                                 .'|soba/([^/]++)/(?'
-                                    .'|edit(*:195)'
-                                    .'|delete(*:209)'
-                                    .'|show(*:221)'
+                                    .'|edit(*:315)'
+                                    .'|delete(*:329)'
+                                    .'|show(*:341)'
                                 .')'
                             .')'
                             .'|p(?'
                                 .'|ozycja(?'
                                     .'|zamowienia/([^/]++)/(?'
-                                        .'|edit(*:271)'
-                                        .'|delete(*:285)'
-                                        .'|show(*:297)'
-                                    .')'
-                                    .'|menu/([^/]++)/(?'
-                                        .'|edit(*:327)'
-                                        .'|delete(*:341)'
-                                        .'|show(*:353)'
-                                    .')'
-                                .')'
-                                .'|r(?'
-                                    .'|acownik/([^/]++)/(?'
                                         .'|edit(*:391)'
                                         .'|delete(*:405)'
                                         .'|show(*:417)'
                                     .')'
+                                    .'|menu/([^/]++)/(?'
+                                        .'|edit(*:447)'
+                                        .'|delete(*:461)'
+                                        .'|show(*:473)'
+                                    .')'
+                                .')'
+                                .'|r(?'
+                                    .'|acownik/([^/]++)/(?'
+                                        .'|edit(*:511)'
+                                        .'|delete(*:525)'
+                                        .'|show(*:537)'
+                                    .')'
                                     .'|odukt/([^/]++)/(?'
-                                        .'|edit(*:448)'
-                                        .'|delete(*:462)'
-                                        .'|show(*:474)'
+                                        .'|edit(*:568)'
+                                        .'|delete(*:582)'
+                                        .'|show(*:594)'
                                     .')'
                                 .')'
                             .')'
                             .'|r(?'
                                 .'|achunek/([^/]++)/(?'
-                                    .'|edit(*:513)'
-                                    .'|delete(*:527)'
-                                    .'|show(*:539)'
+                                    .'|edit(*:633)'
+                                    .'|delete(*:647)'
+                                    .'|show(*:659)'
                                 .')'
                                 .'|ezerwacje/([^/]++)/(?'
-                                    .'|edit(*:574)'
-                                    .'|delete(*:588)'
-                                    .'|show(*:600)'
+                                    .'|edit(*:694)'
+                                    .'|delete(*:708)'
+                                    .'|show(*:720)'
                                 .')'
                                 .'|ola/([^/]++)/(?'
-                                    .'|edit(*:629)'
-                                    .'|delete(*:643)'
-                                    .'|show(*:655)'
+                                    .'|edit(*:749)'
+                                    .'|delete(*:763)'
+                                    .'|show(*:775)'
                                 .')'
-                            .')'
-                            .'|kategoria/([^/]++)/(?'
-                                .'|edit(*:691)'
-                                .'|delete(*:705)'
-                                .'|show(*:717)'
                             .')'
                             .'|s(?'
                                 .'|ektor/([^/]++)/(?'
-                                    .'|edit(*:752)'
-                                    .'|delete(*:766)'
-                                    .'|show(*:778)'
+                                    .'|edit(*:811)'
+                                    .'|delete(*:825)'
+                                    .'|show(*:837)'
                                 .')'
                                 .'|t(?'
                                     .'|alyklient/([^/]++)/(?'
-                                        .'|edit(*:817)'
-                                        .'|delete(*:831)'
-                                        .'|show(*:843)'
+                                        .'|edit(*:876)'
+                                        .'|delete(*:890)'
+                                        .'|show(*:902)'
                                     .')'
                                     .'|olik/([^/]++)/(?'
-                                        .'|edit(*:873)'
-                                        .'|delete(*:887)'
-                                        .'|show(*:899)'
+                                        .'|edit(*:932)'
+                                        .'|delete(*:946)'
+                                        .'|show(*:958)'
                                     .')'
                                 .')'
                             .')'
                             .'|vat/([^/]++)/(?'
-                                .'|edit(*:930)'
-                                .'|delete(*:944)'
-                                .'|show(*:956)'
+                                .'|edit(*:989)'
+                                .'|delete(*:1003)'
+                                .'|show(*:1016)'
                             .')'
                         .')'
                     .')'
                     .'|/_(?'
-                        .'|error/(\\d+)(?:\\.([^/]++))?(*:998)'
-                        .'|wdt/([^/]++)(*:1018)'
+                        .'|error/(\\d+)(?:\\.([^/]++))?(*:1059)'
+                        .'|wdt/([^/]++)(*:1080)'
                         .'|profiler/([^/]++)(?'
                             .'|/(?'
-                                .'|search/results(*:1065)'
-                                .'|router(*:1080)'
+                                .'|search/results(*:1127)'
+                                .'|router(*:1142)'
                                 .'|exception(?'
-                                    .'|(*:1101)'
-                                    .'|\\.css(*:1115)'
+                                    .'|(*:1163)'
+                                    .'|\\.css(*:1177)'
                                 .')'
                             .')'
-                            .'|(*:1126)'
+                            .'|(*:1188)'
                         .')'
                     .')'
                     .'|/([^/]++)/z(?'
                         .'|amowienie(?'
-                            .'|(*:1163)'
-                            .'|/podsumowanie/zamkniecie/rachunku(*:1205)'
+                            .'|(*:1225)'
+                            .'|/podsumowanie/zamkniecie/rachunku(*:1267)'
                         .')'
-                        .'|emowienie/podsumowanie(*:1237)'
+                        .'|emowienie/podsumowanie(*:1299)'
                     .')'
                 .')$}sD',
         );
@@ -325,58 +334,61 @@ class srcDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                         $routes = array(
                             27 => array(array('_route' => 'app_zamowienie_index', '_controller' => 'App\\Controller\\ZamowienieController::indexAction'), array('imie'), null, null),
                             98 => array(array('_route' => 'sonata_admin_short_object_information', '_controller' => 'sonata.admin.controller.admin::getShortObjectDescriptionAction', '_format' => 'html'), array('_format'), null, null),
-                            139 => array(array('_route' => 'admin_app_obsluga_edit', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::editAction', '_sonata_admin' => 'admin.obsluga', '_sonata_name' => 'admin_app_obsluga_edit'), array('id'), null, null),
-                            153 => array(array('_route' => 'admin_app_obsluga_delete', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::deleteAction', '_sonata_admin' => 'admin.obsluga', '_sonata_name' => 'admin_app_obsluga_delete'), array('id'), null, null),
-                            165 => array(array('_route' => 'admin_app_obsluga_show', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::showAction', '_sonata_admin' => 'admin.obsluga', '_sonata_name' => 'admin_app_obsluga_show'), array('id'), null, null),
-                            195 => array(array('_route' => 'admin_app_osoba_edit', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::editAction', '_sonata_admin' => 'admin.osoba', '_sonata_name' => 'admin_app_osoba_edit'), array('id'), null, null),
-                            209 => array(array('_route' => 'admin_app_osoba_delete', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::deleteAction', '_sonata_admin' => 'admin.osoba', '_sonata_name' => 'admin_app_osoba_delete'), array('id'), null, null),
-                            221 => array(array('_route' => 'admin_app_osoba_show', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::showAction', '_sonata_admin' => 'admin.osoba', '_sonata_name' => 'admin_app_osoba_show'), array('id'), null, null),
-                            271 => array(array('_route' => 'admin_app_pozycjazamowienia_edit', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::editAction', '_sonata_admin' => 'admin.pozycja_zamowienia', '_sonata_name' => 'admin_app_pozycjazamowienia_edit'), array('id'), null, null),
-                            285 => array(array('_route' => 'admin_app_pozycjazamowienia_delete', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::deleteAction', '_sonata_admin' => 'admin.pozycja_zamowienia', '_sonata_name' => 'admin_app_pozycjazamowienia_delete'), array('id'), null, null),
-                            297 => array(array('_route' => 'admin_app_pozycjazamowienia_show', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::showAction', '_sonata_admin' => 'admin.pozycja_zamowienia', '_sonata_name' => 'admin_app_pozycjazamowienia_show'), array('id'), null, null),
-                            327 => array(array('_route' => 'admin_app_pozycjamenu_edit', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::editAction', '_sonata_admin' => 'admin.pozycja_menu', '_sonata_name' => 'admin_app_pozycjamenu_edit'), array('id'), null, null),
-                            341 => array(array('_route' => 'admin_app_pozycjamenu_delete', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::deleteAction', '_sonata_admin' => 'admin.pozycja_menu', '_sonata_name' => 'admin_app_pozycjamenu_delete'), array('id'), null, null),
-                            353 => array(array('_route' => 'admin_app_pozycjamenu_show', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::showAction', '_sonata_admin' => 'admin.pozycja_menu', '_sonata_name' => 'admin_app_pozycjamenu_show'), array('id'), null, null),
-                            391 => array(array('_route' => 'admin_app_pracownik_edit', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::editAction', '_sonata_admin' => 'admin.pracownik', '_sonata_name' => 'admin_app_pracownik_edit'), array('id'), null, null),
-                            405 => array(array('_route' => 'admin_app_pracownik_delete', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::deleteAction', '_sonata_admin' => 'admin.pracownik', '_sonata_name' => 'admin_app_pracownik_delete'), array('id'), null, null),
-                            417 => array(array('_route' => 'admin_app_pracownik_show', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::showAction', '_sonata_admin' => 'admin.pracownik', '_sonata_name' => 'admin_app_pracownik_show'), array('id'), null, null),
-                            448 => array(array('_route' => 'admin_app_produkt_edit', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::editAction', '_sonata_admin' => 'admin.produkt', '_sonata_name' => 'admin_app_produkt_edit'), array('id'), null, null),
-                            462 => array(array('_route' => 'admin_app_produkt_delete', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::deleteAction', '_sonata_admin' => 'admin.produkt', '_sonata_name' => 'admin_app_produkt_delete'), array('id'), null, null),
-                            474 => array(array('_route' => 'admin_app_produkt_show', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::showAction', '_sonata_admin' => 'admin.produkt', '_sonata_name' => 'admin_app_produkt_show'), array('id'), null, null),
-                            513 => array(array('_route' => 'admin_app_rachunek_edit', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::editAction', '_sonata_admin' => 'admin.rachunek', '_sonata_name' => 'admin_app_rachunek_edit'), array('id'), null, null),
-                            527 => array(array('_route' => 'admin_app_rachunek_delete', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::deleteAction', '_sonata_admin' => 'admin.rachunek', '_sonata_name' => 'admin_app_rachunek_delete'), array('id'), null, null),
-                            539 => array(array('_route' => 'admin_app_rachunek_show', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::showAction', '_sonata_admin' => 'admin.rachunek', '_sonata_name' => 'admin_app_rachunek_show'), array('id'), null, null),
-                            574 => array(array('_route' => 'admin_app_rezerwacje_edit', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::editAction', '_sonata_admin' => 'admin.rezerwacja', '_sonata_name' => 'admin_app_rezerwacje_edit'), array('id'), null, null),
-                            588 => array(array('_route' => 'admin_app_rezerwacje_delete', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::deleteAction', '_sonata_admin' => 'admin.rezerwacja', '_sonata_name' => 'admin_app_rezerwacje_delete'), array('id'), null, null),
-                            600 => array(array('_route' => 'admin_app_rezerwacje_show', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::showAction', '_sonata_admin' => 'admin.rezerwacja', '_sonata_name' => 'admin_app_rezerwacje_show'), array('id'), null, null),
-                            629 => array(array('_route' => 'admin_app_rola_edit', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::editAction', '_sonata_admin' => 'admin.rola', '_sonata_name' => 'admin_app_rola_edit'), array('id'), null, null),
-                            643 => array(array('_route' => 'admin_app_rola_delete', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::deleteAction', '_sonata_admin' => 'admin.rola', '_sonata_name' => 'admin_app_rola_delete'), array('id'), null, null),
-                            655 => array(array('_route' => 'admin_app_rola_show', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::showAction', '_sonata_admin' => 'admin.rola', '_sonata_name' => 'admin_app_rola_show'), array('id'), null, null),
-                            691 => array(array('_route' => 'admin_app_kategoria_edit', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::editAction', '_sonata_admin' => 'admin.kategoria', '_sonata_name' => 'admin_app_kategoria_edit'), array('id'), null, null),
-                            705 => array(array('_route' => 'admin_app_kategoria_delete', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::deleteAction', '_sonata_admin' => 'admin.kategoria', '_sonata_name' => 'admin_app_kategoria_delete'), array('id'), null, null),
-                            717 => array(array('_route' => 'admin_app_kategoria_show', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::showAction', '_sonata_admin' => 'admin.kategoria', '_sonata_name' => 'admin_app_kategoria_show'), array('id'), null, null),
-                            752 => array(array('_route' => 'admin_app_sektor_edit', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::editAction', '_sonata_admin' => 'admin.sektor', '_sonata_name' => 'admin_app_sektor_edit'), array('id'), null, null),
-                            766 => array(array('_route' => 'admin_app_sektor_delete', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::deleteAction', '_sonata_admin' => 'admin.sektor', '_sonata_name' => 'admin_app_sektor_delete'), array('id'), null, null),
-                            778 => array(array('_route' => 'admin_app_sektor_show', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::showAction', '_sonata_admin' => 'admin.sektor', '_sonata_name' => 'admin_app_sektor_show'), array('id'), null, null),
-                            817 => array(array('_route' => 'admin_app_stalyklient_edit', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::editAction', '_sonata_admin' => 'admin.staly_klient', '_sonata_name' => 'admin_app_stalyklient_edit'), array('id'), null, null),
-                            831 => array(array('_route' => 'admin_app_stalyklient_delete', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::deleteAction', '_sonata_admin' => 'admin.staly_klient', '_sonata_name' => 'admin_app_stalyklient_delete'), array('id'), null, null),
-                            843 => array(array('_route' => 'admin_app_stalyklient_show', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::showAction', '_sonata_admin' => 'admin.staly_klient', '_sonata_name' => 'admin_app_stalyklient_show'), array('id'), null, null),
-                            873 => array(array('_route' => 'admin_app_stolik_edit', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::editAction', '_sonata_admin' => 'admin.stolik', '_sonata_name' => 'admin_app_stolik_edit'), array('id'), null, null),
-                            887 => array(array('_route' => 'admin_app_stolik_delete', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::deleteAction', '_sonata_admin' => 'admin.stolik', '_sonata_name' => 'admin_app_stolik_delete'), array('id'), null, null),
-                            899 => array(array('_route' => 'admin_app_stolik_show', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::showAction', '_sonata_admin' => 'admin.stolik', '_sonata_name' => 'admin_app_stolik_show'), array('id'), null, null),
-                            930 => array(array('_route' => 'admin_app_vat_edit', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::editAction', '_sonata_admin' => 'admin.vat', '_sonata_name' => 'admin_app_vat_edit'), array('id'), null, null),
-                            944 => array(array('_route' => 'admin_app_vat_delete', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::deleteAction', '_sonata_admin' => 'admin.vat', '_sonata_name' => 'admin_app_vat_delete'), array('id'), null, null),
-                            956 => array(array('_route' => 'admin_app_vat_show', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::showAction', '_sonata_admin' => 'admin.vat', '_sonata_name' => 'admin_app_vat_show'), array('id'), null, null),
-                            998 => array(array('_route' => '_twig_error_test', '_controller' => 'twig.controller.preview_error::previewErrorPageAction', '_format' => 'html'), array('code', '_format'), null, null),
-                            1018 => array(array('_route' => '_wdt', '_controller' => 'web_profiler.controller.profiler::toolbarAction'), array('token'), null, null),
-                            1065 => array(array('_route' => '_profiler_search_results', '_controller' => 'web_profiler.controller.profiler::searchResultsAction'), array('token'), null, null),
-                            1080 => array(array('_route' => '_profiler_router', '_controller' => 'web_profiler.controller.router::panelAction'), array('token'), null, null),
-                            1101 => array(array('_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception::showAction'), array('token'), null, null),
-                            1115 => array(array('_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception::cssAction'), array('token'), null, null),
-                            1126 => array(array('_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'), array('token'), null, null),
-                            1163 => array(array('_route' => 'zamowienie', 'imie' => '', '_controller' => 'App\\Controller\\\\ZamowienieController::indexAction'), array('imie'), null, null),
-                            1205 => array(array('_route' => 'zakoncz', 'imie' => '', '_controller' => 'App\\Controller\\\\ZZamowienieZakonczController::indexAction'), array('imie'), null, null),
-                            1237 => array(array('_route' => 'podsumowanie', 'imie' => '', '_controller' => 'App\\Controller\\\\ZamowieniePodsumowanieController::indexAction'), array('imie'), null, null),
+                            136 => array(array('_route' => 'admin_app_blokada_edit', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::editAction', '_sonata_admin' => 'admin.blokada', '_sonata_name' => 'admin_app_blokada_edit'), array('id'), null, null),
+                            150 => array(array('_route' => 'admin_app_blokada_delete', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::deleteAction', '_sonata_admin' => 'admin.blokada', '_sonata_name' => 'admin_app_blokada_delete'), array('id'), null, null),
+                            162 => array(array('_route' => 'admin_app_blokada_show', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::showAction', '_sonata_admin' => 'admin.blokada', '_sonata_name' => 'admin_app_blokada_show'), array('id'), null, null),
+                            197 => array(array('_route' => 'admin_app_kategoria_edit', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::editAction', '_sonata_admin' => 'admin.kategoria', '_sonata_name' => 'admin_app_kategoria_edit'), array('id'), null, null),
+                            211 => array(array('_route' => 'admin_app_kategoria_delete', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::deleteAction', '_sonata_admin' => 'admin.kategoria', '_sonata_name' => 'admin_app_kategoria_delete'), array('id'), null, null),
+                            223 => array(array('_route' => 'admin_app_kategoria_show', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::showAction', '_sonata_admin' => 'admin.kategoria', '_sonata_name' => 'admin_app_kategoria_show'), array('id'), null, null),
+                            259 => array(array('_route' => 'admin_app_obsluga_edit', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::editAction', '_sonata_admin' => 'admin.obsluga', '_sonata_name' => 'admin_app_obsluga_edit'), array('id'), null, null),
+                            273 => array(array('_route' => 'admin_app_obsluga_delete', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::deleteAction', '_sonata_admin' => 'admin.obsluga', '_sonata_name' => 'admin_app_obsluga_delete'), array('id'), null, null),
+                            285 => array(array('_route' => 'admin_app_obsluga_show', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::showAction', '_sonata_admin' => 'admin.obsluga', '_sonata_name' => 'admin_app_obsluga_show'), array('id'), null, null),
+                            315 => array(array('_route' => 'admin_app_osoba_edit', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::editAction', '_sonata_admin' => 'admin.osoba', '_sonata_name' => 'admin_app_osoba_edit'), array('id'), null, null),
+                            329 => array(array('_route' => 'admin_app_osoba_delete', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::deleteAction', '_sonata_admin' => 'admin.osoba', '_sonata_name' => 'admin_app_osoba_delete'), array('id'), null, null),
+                            341 => array(array('_route' => 'admin_app_osoba_show', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::showAction', '_sonata_admin' => 'admin.osoba', '_sonata_name' => 'admin_app_osoba_show'), array('id'), null, null),
+                            391 => array(array('_route' => 'admin_app_pozycjazamowienia_edit', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::editAction', '_sonata_admin' => 'admin.pozycja_zamowienia', '_sonata_name' => 'admin_app_pozycjazamowienia_edit'), array('id'), null, null),
+                            405 => array(array('_route' => 'admin_app_pozycjazamowienia_delete', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::deleteAction', '_sonata_admin' => 'admin.pozycja_zamowienia', '_sonata_name' => 'admin_app_pozycjazamowienia_delete'), array('id'), null, null),
+                            417 => array(array('_route' => 'admin_app_pozycjazamowienia_show', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::showAction', '_sonata_admin' => 'admin.pozycja_zamowienia', '_sonata_name' => 'admin_app_pozycjazamowienia_show'), array('id'), null, null),
+                            447 => array(array('_route' => 'admin_app_pozycjamenu_edit', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::editAction', '_sonata_admin' => 'admin.pozycja_menu', '_sonata_name' => 'admin_app_pozycjamenu_edit'), array('id'), null, null),
+                            461 => array(array('_route' => 'admin_app_pozycjamenu_delete', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::deleteAction', '_sonata_admin' => 'admin.pozycja_menu', '_sonata_name' => 'admin_app_pozycjamenu_delete'), array('id'), null, null),
+                            473 => array(array('_route' => 'admin_app_pozycjamenu_show', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::showAction', '_sonata_admin' => 'admin.pozycja_menu', '_sonata_name' => 'admin_app_pozycjamenu_show'), array('id'), null, null),
+                            511 => array(array('_route' => 'admin_app_pracownik_edit', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::editAction', '_sonata_admin' => 'admin.pracownik', '_sonata_name' => 'admin_app_pracownik_edit'), array('id'), null, null),
+                            525 => array(array('_route' => 'admin_app_pracownik_delete', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::deleteAction', '_sonata_admin' => 'admin.pracownik', '_sonata_name' => 'admin_app_pracownik_delete'), array('id'), null, null),
+                            537 => array(array('_route' => 'admin_app_pracownik_show', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::showAction', '_sonata_admin' => 'admin.pracownik', '_sonata_name' => 'admin_app_pracownik_show'), array('id'), null, null),
+                            568 => array(array('_route' => 'admin_app_produkt_edit', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::editAction', '_sonata_admin' => 'admin.produkt', '_sonata_name' => 'admin_app_produkt_edit'), array('id'), null, null),
+                            582 => array(array('_route' => 'admin_app_produkt_delete', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::deleteAction', '_sonata_admin' => 'admin.produkt', '_sonata_name' => 'admin_app_produkt_delete'), array('id'), null, null),
+                            594 => array(array('_route' => 'admin_app_produkt_show', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::showAction', '_sonata_admin' => 'admin.produkt', '_sonata_name' => 'admin_app_produkt_show'), array('id'), null, null),
+                            633 => array(array('_route' => 'admin_app_rachunek_edit', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::editAction', '_sonata_admin' => 'admin.rachunek', '_sonata_name' => 'admin_app_rachunek_edit'), array('id'), null, null),
+                            647 => array(array('_route' => 'admin_app_rachunek_delete', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::deleteAction', '_sonata_admin' => 'admin.rachunek', '_sonata_name' => 'admin_app_rachunek_delete'), array('id'), null, null),
+                            659 => array(array('_route' => 'admin_app_rachunek_show', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::showAction', '_sonata_admin' => 'admin.rachunek', '_sonata_name' => 'admin_app_rachunek_show'), array('id'), null, null),
+                            694 => array(array('_route' => 'admin_app_rezerwacje_edit', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::editAction', '_sonata_admin' => 'admin.rezerwacja', '_sonata_name' => 'admin_app_rezerwacje_edit'), array('id'), null, null),
+                            708 => array(array('_route' => 'admin_app_rezerwacje_delete', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::deleteAction', '_sonata_admin' => 'admin.rezerwacja', '_sonata_name' => 'admin_app_rezerwacje_delete'), array('id'), null, null),
+                            720 => array(array('_route' => 'admin_app_rezerwacje_show', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::showAction', '_sonata_admin' => 'admin.rezerwacja', '_sonata_name' => 'admin_app_rezerwacje_show'), array('id'), null, null),
+                            749 => array(array('_route' => 'admin_app_rola_edit', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::editAction', '_sonata_admin' => 'admin.rola', '_sonata_name' => 'admin_app_rola_edit'), array('id'), null, null),
+                            763 => array(array('_route' => 'admin_app_rola_delete', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::deleteAction', '_sonata_admin' => 'admin.rola', '_sonata_name' => 'admin_app_rola_delete'), array('id'), null, null),
+                            775 => array(array('_route' => 'admin_app_rola_show', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::showAction', '_sonata_admin' => 'admin.rola', '_sonata_name' => 'admin_app_rola_show'), array('id'), null, null),
+                            811 => array(array('_route' => 'admin_app_sektor_edit', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::editAction', '_sonata_admin' => 'admin.sektor', '_sonata_name' => 'admin_app_sektor_edit'), array('id'), null, null),
+                            825 => array(array('_route' => 'admin_app_sektor_delete', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::deleteAction', '_sonata_admin' => 'admin.sektor', '_sonata_name' => 'admin_app_sektor_delete'), array('id'), null, null),
+                            837 => array(array('_route' => 'admin_app_sektor_show', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::showAction', '_sonata_admin' => 'admin.sektor', '_sonata_name' => 'admin_app_sektor_show'), array('id'), null, null),
+                            876 => array(array('_route' => 'admin_app_stalyklient_edit', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::editAction', '_sonata_admin' => 'admin.staly_klient', '_sonata_name' => 'admin_app_stalyklient_edit'), array('id'), null, null),
+                            890 => array(array('_route' => 'admin_app_stalyklient_delete', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::deleteAction', '_sonata_admin' => 'admin.staly_klient', '_sonata_name' => 'admin_app_stalyklient_delete'), array('id'), null, null),
+                            902 => array(array('_route' => 'admin_app_stalyklient_show', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::showAction', '_sonata_admin' => 'admin.staly_klient', '_sonata_name' => 'admin_app_stalyklient_show'), array('id'), null, null),
+                            932 => array(array('_route' => 'admin_app_stolik_edit', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::editAction', '_sonata_admin' => 'admin.stolik', '_sonata_name' => 'admin_app_stolik_edit'), array('id'), null, null),
+                            946 => array(array('_route' => 'admin_app_stolik_delete', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::deleteAction', '_sonata_admin' => 'admin.stolik', '_sonata_name' => 'admin_app_stolik_delete'), array('id'), null, null),
+                            958 => array(array('_route' => 'admin_app_stolik_show', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::showAction', '_sonata_admin' => 'admin.stolik', '_sonata_name' => 'admin_app_stolik_show'), array('id'), null, null),
+                            989 => array(array('_route' => 'admin_app_vat_edit', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::editAction', '_sonata_admin' => 'admin.vat', '_sonata_name' => 'admin_app_vat_edit'), array('id'), null, null),
+                            1003 => array(array('_route' => 'admin_app_vat_delete', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::deleteAction', '_sonata_admin' => 'admin.vat', '_sonata_name' => 'admin_app_vat_delete'), array('id'), null, null),
+                            1016 => array(array('_route' => 'admin_app_vat_show', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::showAction', '_sonata_admin' => 'admin.vat', '_sonata_name' => 'admin_app_vat_show'), array('id'), null, null),
+                            1059 => array(array('_route' => '_twig_error_test', '_controller' => 'twig.controller.preview_error::previewErrorPageAction', '_format' => 'html'), array('code', '_format'), null, null),
+                            1080 => array(array('_route' => '_wdt', '_controller' => 'web_profiler.controller.profiler::toolbarAction'), array('token'), null, null),
+                            1127 => array(array('_route' => '_profiler_search_results', '_controller' => 'web_profiler.controller.profiler::searchResultsAction'), array('token'), null, null),
+                            1142 => array(array('_route' => '_profiler_router', '_controller' => 'web_profiler.controller.router::panelAction'), array('token'), null, null),
+                            1163 => array(array('_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception::showAction'), array('token'), null, null),
+                            1177 => array(array('_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception::cssAction'), array('token'), null, null),
+                            1188 => array(array('_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'), array('token'), null, null),
+                            1225 => array(array('_route' => 'zamowienie', 'imie' => '', '_controller' => 'App\\Controller\\\\ZamowienieController::indexAction'), array('imie'), null, null),
+                            1267 => array(array('_route' => 'zakoncz', 'imie' => '', '_controller' => 'App\\Controller\\\\ZZamowienieZakonczController::indexAction'), array('imie'), null, null),
+                            1299 => array(array('_route' => 'podsumowanie', 'imie' => '', '_controller' => 'App\\Controller\\\\ZamowieniePodsumowanieController::indexAction'), array('imie'), null, null),
                         );
             
                         list($ret, $vars, $requiredMethods, $requiredSchemes) = $routes[$m];
@@ -402,7 +414,7 @@ class srcDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                         return $ret;
                 }
 
-                if (1237 === $m) {
+                if (1299 === $m) {
                     break;
                 }
                 $regex = substr_replace($regex, 'F', $m - $offset, 1 + strlen($m));

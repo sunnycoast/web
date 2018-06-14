@@ -21,7 +21,7 @@ class PozycjaZamowieniaAdmin extends AbstractAdmin
         $form
             ->add('IdZamowienia')
             ->add('IdPozycjiMenu')
-            ->add('LiczbaProduktu')
+            ->add('LiczbaProduktow')
             ->add('StanRealizacji');
     }
 
@@ -30,7 +30,7 @@ class PozycjaZamowieniaAdmin extends AbstractAdmin
         $filter
             ->add('IdZamowienia')
             ->add('IdPozycjiMenu')
-            ->add('LiczbaProduktu')
+            ->add('LiczbaProduktow')
             ->add('StanRealizacji');
     }
 
@@ -39,7 +39,7 @@ class PozycjaZamowieniaAdmin extends AbstractAdmin
         $list
             ->addIdentifier('IdZamowienia')
             ->add('IdPozycjiMenu')
-            ->add('LiczbaProduktu')
+            ->add('LiczbaProduktow')
             ->add('StanRealizacji');
     }
 

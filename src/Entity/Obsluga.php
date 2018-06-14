@@ -28,7 +28,7 @@ class Obsluga implements \Serializable
     /**
      * @ORM\ManyToOne (targetEntity = "Pracownik")
      * @ORM\JoinColumn (name = "IdPracownika", referencedColumnName = "id")
-     * @ORM\Id
+
      * @ORM\Column(type="integer")
      */
     protected $IdPracownika;

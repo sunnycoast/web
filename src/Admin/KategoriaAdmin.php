@@ -9,6 +9,7 @@
 namespace App\Admin;
 
 
+use Doctrine\DBAL\Types\TextType;
 use Sonata\AdminBundle\Admin\AbstractAdmin;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
@@ -19,9 +20,8 @@ class KategoriaAdmin extends AbstractAdmin
     protected function configureFormFields(FormMapper $form)
     {
         $form
-            ->add('IdKategorii')
-            ->add('NazwaKategorii')
-            ->add('KolorKategorii');
+            ->add('NazwaKategorii',TextType::class)
+            ->add('KolorKategorii',TextType::class);
     }
 
     protected function configureDatagridFilters(DatagridMapper $filter)

@@ -19,7 +19,6 @@ class ObslugaAdmin extends AbstractAdmin
     protected function configureFormFields(FormMapper $form)
     {
         $form
-            ->add('IdRachunku')
             ->add('IdPracownika')
             ->add('DataOtwarcia');
     }

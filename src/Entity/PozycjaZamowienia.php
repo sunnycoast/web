@@ -28,7 +28,7 @@ class PozycjaZamowienia implements \Serializable
     /**
      * @ORM\ManyToOne (targetEntity = "PozycjaMenu")
      * @ORM\JoinColumn (name = "IdPozycjiMenu", referencedColumnName = "id")
-     * @ORM\Id
+     *
      * @ORM\Column(type="integer")
      */
     protected $IdPozycjiMenu;
@@ -39,11 +39,11 @@ class PozycjaZamowienia implements \Serializable
     /** @ORM\Column(type="string") */
     protected $StanRealizacji;
 
-    public function __construct ($IdZamowienia, $IdPozycjiMenu, $LiczbaProduktu = 1, $StanRealizacji = 1)
+    public function __construct ($IdZamowienia, $IdPozycjiMenu, $LiczbaProduktow = 1, $StanRealizacji = 1)
     {
         $this->IdZamowienia     = $IdZamowienia;
         $this->IdPozycjiMenu    = $IdPozycjiMenu;
-        $this->LiczbaProduktu   = $LiczbaProduktu;
+        $this->LiczbaProduktow   = $LiczbaProduktow;
         $this->StanRealizacji   = $StanRealizacji;
     }
 
@@ -100,7 +100,7 @@ class PozycjaZamowienia implements \Serializable
         return serialize(array(
             $this->IdZamowienia,
             $this->IdPozycjiMenu,
-            $this->LiczbaProduktu,
+            $this->LiczbaProduktow,
             $this->StanRealizacji,
             // see section on salt below
             // $this->salt,
@@ -113,7 +113,7 @@ class PozycjaZamowienia implements \Serializable
         list (
             $this->IdZamowienia,
             $this->IdPozycjiMenu,
-            $this->LiczbaProduktu,
+            $this->LiczbaProduktow,
             $this->StanRealizacji,
             // see section on salt below
             // $this->salt

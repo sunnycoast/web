@@ -5,12 +5,19 @@ parameters:
 
 services:
 
-#    admin.blokada:
-#        class: App\Admin\BlokadaAdmin
-#        arguments: [~, App\Entity\Blokada, ~]
-#        tags:
-#            - { name: sonata.admin, manager_type: orm, label: Blokada }
-#        public: true
+    admin.blokada:
+        class: App\Admin\BlokadaAdmin
+        arguments: [~, App\Entity\Blokada, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: Blokada }
+        public: true
+
+    admin.kategoria:
+        class: App\Admin\KategoriaAdmin
+        arguments: [~, App\Entity\Kategoria, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: Kategoria }
+        public: true
 
     admin.obsluga:
         class: App\Admin\ObslugaAdmin
@@ -73,13 +80,6 @@ services:
         arguments: [~, App\Entity\PozycjaMenu, ~]
         tags:
             - { name: sonata.admin, manager_type: orm, label: PozycjaMenu }
-        public: true
-
-    admin.kategoria:
-        class: App\Admin\KategoriaAdmin
-        arguments: [~, App\Entity\Kategoria, ~]
-        tags:
-            - { name: sonata.admin, manager_type: orm, label: Kategoria }
         public: true
 
     admin.sektor:
