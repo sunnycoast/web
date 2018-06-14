@@ -12,3 +12,8 @@ a53d81,127.0.0.1,GET,http://127.0.0.1:8000/podglad_sali,1528911928,,200
 6e3549,127.0.0.1,GET,http://127.0.0.1:8000/zamowienie,1528913493,814e4a,200
 814e4a,127.0.0.1,GET,http://127.0.0.1:8000/zamowienie,1528913493,,404
 b8b5f1,127.0.0.1,GET,http://127.0.0.1:8000/menu,1528913496,,200
+94be44,127.0.0.1,GET,http://localhost:8000/,1528990179,,200
+910143,127.0.0.1,GET,http://localhost:8000/favicon.ico,1528990182,a67671,200
+a67671,127.0.0.1,GET,http://localhost:8000/favicon.ico,1528990182,,404
+53547c,127.0.0.1,GET,http://localhost:8000/menu,1528990184,,200
+9f0af2,127.0.0.1,GET,http://localhost:8000/menu,1528990213,,200

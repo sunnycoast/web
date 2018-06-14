@@ -1,6 +1,9 @@
 <?php
 
 namespace App\Controller;
+use Symfony\Component\Cache\Simple\FilesystemCache;
+
+
 
 
 use Symfony\Component\Routing\Annotation\Route;
@@ -23,9 +26,27 @@ class MenuController extends Controller
      */
     public function indexAction()
     {
+        $cache = new FilesystemCache();
         $em = $this ->getEntityManager();
-        $kategorie = $em->getRepository(Kategoria::class)->findAll();//($qb->execute());
-        $menu = $em->getRepository(PozycjaMenu::class) ->getAll();
+        if (!$cache->has('kategorie')) {
+            $kategorie = $em->getRepository(Kategoria::class)->findAll();//($qb->execute());
+            $cache->set('kategorie', $kategorie);
+        }
+        else
+        {
+            $kategorie = $cache->get('kategorie');
+        }
+
+        if (!$cache->has('pozycje')) {
+            $menu = $em->getRepository(PozycjaMenu::class) ->getAll();
+            $cache->set('pozycje', $menu);
+        }
+        else
+        {
+            $menu = $cache->get('pozycje');
+        }
+
+
 
 
 
