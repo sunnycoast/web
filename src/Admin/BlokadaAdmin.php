@@ -25,10 +25,7 @@ class BlokadaAdmin extends AbstractAdmin
             ->add('DataWprowadzenia')
             ->add('DataWycofania')
             ->add('Powod')
-            ->add('IdPozycjiMenu', EntityType::class,[
-                'class' => PozycjaMenu::class,
-                'choice_label' =>'IdPozycjiMenu',
-            ])
+            ->add('IdPozycjiMenu')
             ->add('IdPracownika');
     }
 

@@ -60,8 +60,13 @@ class Rezerwacje implements \Serializable
     public function getDataRezerwacji()
     {    return $this->DataRezerwacji;    }
 
-    public function setDataRezerwacji($dateTime)
-    {    $this->DataRezerwacji = new \DateTime($dateTime);    }
+    /**
+     * @param mixed $DataRezerwacji
+     */
+    public function setDataRezerwacji($DataRezerwacji): void
+    {
+        $this->DataRezerwacji = $DataRezerwacji;
+    }
 
     public function getStolikWybrany()
     {    return $this->StolikWybrany;    }

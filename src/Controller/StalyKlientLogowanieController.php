@@ -80,12 +80,13 @@ class StalyKlientLogowanieController extends Controller
                     $user = $prac[0];
                     $imie = $user['Imie'];
                     $rola = $user['NazwaRoli'];
+                    var_dump($rola);
 
                     $_SESSION['imie' ] = $imie;
                     $_SESSION['zalogowany'] = true;
                     $_SESSION['uzytkownik'] = $rola;
                     $_SESSION['log_adres' ] = 'test403.pl/staly_klient_logowanie';
-                    header('Location:/kelner_podglad_sali');
+                    header('Location:/admin/dashboard');
                     exit();
 
                 }

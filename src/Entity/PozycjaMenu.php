@@ -79,8 +79,32 @@ class PozycjaMenu implements \Serializable
     public function setDataWprowadzeniaNow()
     {    $this->DataWprowadzenia = new \DateTime();    }
 
-    public function setDataWprowadzenia($dateTime)
-    {    $this->DataWprowadzenia = new \DateTime($dateTime);    }
+//    public function setDataWprowadzenia($dateTime)
+//    {    $this->DataWprowadzenia = new \DateTime($dateTime);    }
+
+    /**
+     * @param mixed $DataWprowadzenia
+     */
+    public function setDataWprowadzenia($DataWprowadzenia): void
+    {
+        $this->DataWprowadzenia = $DataWprowadzenia;
+    }
+
+    /**
+     * @param mixed $DataWycofania
+     */
+    public function setDataWycofania($DataWycofania): void
+    {
+        $this->DataWycofania = $DataWycofania;
+    }
+
+    /**
+     * @param mixed $IdPozycjiMenu
+     */
+    public function setIdPozycjiMenu($IdPozycjiMenu): void
+    {
+        $this->IdPozycjiMenu = $IdPozycjiMenu;
+    }
 
     public function getDataWycofania()
     {    return $this->DataWycofania;    }

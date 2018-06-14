@@ -24,26 +24,26 @@ class Blokada implements \Serializable
      */
     protected $IdBlokady;
 
-    /** @ORM\Column(type="integer") */
+    /** @ORM\Column(type="integer", nullable=true) */
     protected $DataWprowadzenia;
 
-    /** @ORM\Column(type="datetime") */
+    /** @ORM\Column(type="datetime", nullable=true) */
     protected $DataWycofania;
 
-    /** @ORM\Column(type="string") */
+    /** @ORM\Column(type="string", nullable=true) */
     protected $Powod;
 
     /**
      * @ORM\ManyToOne (targetEntity = "PozycjaMenu")
      * @ORM\JoinColumn (name = "IdPozycjiMenu", referencedColumnName = "id")
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer", nullable=true)
      */
     protected $IdPozycjiMenu;
 
     /**
      * @ORM\ManyToOne (targetEntity = "Pracownik")
      * @ORM\JoinColumn (name = "IdPracownika", referencedColumnName = "id")
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer",nullable=true)
      */
     protected $IdPracownika;
 
@@ -121,8 +121,16 @@ class Blokada implements \Serializable
     public function setDataWprowadzeniaNow()
     {    $this->DataWprowadzenia = new \DateTime();    }
 
-    public function setDataWprowadzenia($dateTime)
-    {    $this->DataWprowadzenia = new \DateTime($dateTime);    }
+//    public function setDataWprowadzenia($dateTime)
+//    {    $this->DataWprowadzenia = new \DateTime($dateTime);    }
+
+    /**
+     * @param mixed $DataWprowadzenia
+     */
+    public function setDataWprowadzenia($DataWprowadzenia): void
+    {
+        $this->DataWprowadzenia = $DataWprowadzenia;
+    }
 
     public function getDataWycofania()
     {    return $this->DataWycofania;    }
