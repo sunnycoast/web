@@ -40,7 +40,13 @@ class PozycjaZamowieniaAdmin extends AbstractAdmin
             ->addIdentifier('IdZamowienia')
             ->add('IdPozycjiMenu')
             ->add('LiczbaProduktow')
-            ->add('StanRealizacji');
+            ->add('StanRealizacji')
+            //         add custom action links
+            ->add('_action','actions',array(
+                'actions' =>array(
+                    'edit' =>array(),
+                )
+            ));
     }
 
 }

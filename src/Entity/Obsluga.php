@@ -38,14 +38,19 @@ class Obsluga implements \Serializable
     protected $DataOtwarcia;
 
 
-    public function __construct ($IdRachunku, $IdPracownika, $DataOtwarcia)
+//    public function __construct ($IdRachunku, $IdPracownika, $DataOtwarcia)
+//    {
+//        $this->IdRachunku  = $IdRachunku;
+//        $this->IdPracownika  = $IdPracownika;
+//        $this->DataOtwarcia  = $DataOtwarcia;
+//    }
+
+    public function __construct()
     {
-        $this->IdRachunku  = $IdRachunku;
-        $this->IdPracownika  = $IdPracownika;
-        $this->DataOtwarcia  = $DataOtwarcia;
+
     }
 
-    public function getIdRachunkua()
+    public function getIdRachunku()
     {    return $this->IdRachunku;    }
 
     public function getIdPracownika()
@@ -53,6 +58,32 @@ class Obsluga implements \Serializable
 
     public function getDataOtwarcia()
     {    return $this->DataOtwarcia;    }
+
+    /**
+     * @param mixed $IdPracownika
+     */
+    public function setIdPracownika($IdPracownika): void
+    {
+        $this->IdPracownika = $IdPracownika;
+    }
+
+    /**
+     * @param mixed $DataOtwarcia
+     */
+    public function setDataOtwarcia($DataOtwarcia): void
+    {
+        $this->DataOtwarcia = $DataOtwarcia;
+    }
+
+    /**
+     * @param mixed $IdRachunku
+     */
+    public function setIdRachunku($IdRachunku): void
+    {
+        $this->IdRachunku = $IdRachunku;
+    }
+
+
 
     //Data przejścia (raczej nie, za dużo robpty za mało sensu)
     //Opis string(co robi generowny przez system)

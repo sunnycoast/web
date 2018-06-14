@@ -19,7 +19,6 @@ class VatAdmin extends AbstractAdmin
     protected function configureFormFields(FormMapper $form)
     {
         $form
-            ->add('IdVAT')
             ->add('StawkaVAT')
             ->add('Dotyczy');
     }
@@ -27,7 +26,6 @@ class VatAdmin extends AbstractAdmin
     protected function configureDatagridFilters(DatagridMapper $filter)
     {
         $filter
-            ->add('IdVAT')
             ->add('StawkaVAT')
             ->add('Dotyczy');
     }
@@ -37,7 +35,13 @@ class VatAdmin extends AbstractAdmin
         $list
             ->addIdentifier('IdVAT')
             ->add('StawkaVAT')
-            ->add('Dotyczy');
+            ->add('Dotyczy')
+            //         add custom action links
+            ->add('_action','actions',array(
+                'actions' =>array(
+                    'edit' =>array(),
+                )
+            ));
     }
 
 }

@@ -19,7 +19,6 @@ class ProduktAdmin extends AbstractAdmin
     protected function configureFormFields(FormMapper $form)
     {
         $form
-            ->add('IdProduktu')
             ->add('NazwaProduktu')
             ->add('Przepis')
             ->add('Opis')
@@ -43,7 +42,13 @@ class ProduktAdmin extends AbstractAdmin
             ->add('NazwaProduktu')
             ->add('Przepis')
             ->add('Opis')
-            ->add('IdKategorii');
+            ->add('IdKategorii')
+            //         add custom action links
+            ->add('_action','actions',array(
+                'actions' =>array(
+                    'edit' =>array(),
+                )
+            ));
     }
 
 }

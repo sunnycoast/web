@@ -49,6 +49,12 @@ class OsobaAdmin extends AbstractAdmin
             ->add('Nazwisko')
             ->add('Plec')
             ->add('NrTelefonu')
-            ->add('DataUrodzenia');
+            ->add('DataUrodzenia')
+            //         add custom action links
+            ->add('_action','actions',array(
+                'actions' =>array(
+                    'edit' =>array(),
+                )
+            ));
     }
 }

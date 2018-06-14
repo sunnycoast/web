@@ -41,12 +41,17 @@ class Rezerwacje implements \Serializable
      */
     protected $IdStalegoKlienta;
 
-    public function __construct ($DataRezerwacji, $IdRachunku, $IdStalegoKlienta, $StolikWybrany = 0)
+//    public function __construct ($DataRezerwacji, $IdRachunku, $IdStalegoKlienta, $StolikWybrany = 0)
+//    {
+//        $this->DataRezerwacji   = new \DateTime($DataRezerwacji);
+//        $this->StolikWybrany    = $StolikWybrany;
+//        $this->IdRachunku       = $IdRachunku;
+//        $this->IdStalegoKlienta = $IdStalegoKlienta;
+//    }
+
+    public function __construct()
     {
-        $this->DataRezerwacji   = new \DateTime($DataRezerwacji);
-        $this->StolikWybrany    = $StolikWybrany;
-        $this->IdRachunku       = $IdRachunku;
-        $this->IdStalegoKlienta = $IdStalegoKlienta;
+
     }
 
     public function getIdRezerwacji()
@@ -66,6 +71,38 @@ class Rezerwacje implements \Serializable
 
     public function getIdStalegoKlienta()
     {    return $this->IdStalegoKlienta;    }
+
+    /**
+     * @param mixed $IdRachunku
+     */
+    public function setIdRachunku($IdRachunku): void
+    {
+        $this->IdRachunku = $IdRachunku;
+    }
+
+    /**
+     * @param mixed $IdStalegoKlienta
+     */
+    public function setIdStalegoKlienta($IdStalegoKlienta): void
+    {
+        $this->IdStalegoKlienta = $IdStalegoKlienta;
+    }
+
+    /**
+     * @param mixed $IdRezerwacji
+     */
+    public function setIdRezerwacji($IdRezerwacji): void
+    {
+        $this->IdRezerwacji = $IdRezerwacji;
+    }
+
+    /**
+     * @param mixed $StolikWybrany
+     */
+    public function setStolikWybrany($StolikWybrany): void
+    {
+        $this->StolikWybrany = $StolikWybrany;
+    }
 
     /** @see \Serializable::serialize() */
     public function serialize()

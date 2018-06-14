@@ -63,6 +63,23 @@ class PozycjaZamowienia implements \Serializable
             $this->LiczbaProduktow = $LiczbaProduktow;
     }
 
+    /**
+     * @param mixed $IdPozycjiMenu
+     */
+    public function setIdPozycjiMenu($IdPozycjiMenu): void
+    {
+        $this->IdPozycjiMenu = $IdPozycjiMenu;
+    }
+
+    /**
+     * @param mixed $IdZamowienia
+     */
+    public function setIdZamowienia($IdZamowienia): void
+    {
+        $this->IdZamowienia = $IdZamowienia;
+    }
+
+
     public function getStanRealizacjiName()
     {
         $StanRealizacji = $this->StanRealizacji;

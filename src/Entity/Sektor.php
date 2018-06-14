@@ -50,11 +50,17 @@ class Sektor implements \Serializable
             ) = unserialize($serialized, ['allowed_classes' => false]);
     }
 
-    public function __construct ($NazwaSektora, $Aktywny = 0)
+//    public function __construct ($NazwaSektora, $Aktywny = 0)
+//    {
+//        $this->NazwaSektora = $NazwaSektora;
+//        $this->Aktywny      = $Aktywny;
+//    }
+
+    public function __construct()
     {
-        $this->NazwaSektora = $NazwaSektora;
-        $this->Aktywny      = $Aktywny;
+
     }
+
     public function getIdSektora()
     {    return $this->IdSektora;    }
 

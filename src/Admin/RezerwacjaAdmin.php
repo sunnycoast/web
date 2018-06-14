@@ -19,7 +19,6 @@ class RezerwacjaAdmin extends AbstractAdmin
     protected function configureFormFields(FormMapper $form)
     {
         $form
-            ->add('IdRezerwacji')
             ->add('DataRezerwacji')
             ->add('StolikWybrany')
             ->add('IdRachunku')
@@ -44,7 +43,13 @@ class RezerwacjaAdmin extends AbstractAdmin
             ->add('DataRezerwacji')
             ->add('StolikWybrany')
             ->add('IdRachunku')
-            ->add('IdStalegoKlienta');
+            ->add('IdStalegoKlienta')
+            //         add custom action links
+            ->add('_action','actions',array(
+                'actions' =>array(
+                    'edit' =>array(),
+                )
+            ));
     }
 
 

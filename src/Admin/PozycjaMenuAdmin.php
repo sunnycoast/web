@@ -19,7 +19,6 @@ class PozycjaMenuAdmin extends AbstractAdmin
     protected function configureFormFields(FormMapper $form)
     {
         $form
-            ->add('IdPozycjiMenu')
             ->add('CenaBrutto')
             ->add('DataWprowadzenia')
             ->add('DataWycofania')
@@ -46,7 +45,13 @@ class PozycjaMenuAdmin extends AbstractAdmin
             ->add('DataWprowadzenia')
             ->add('DataWycofania')
             ->add('IdProduktu')
-            ->add('IdVAT');
+            ->add('IdVAT')
+            //         add custom action links
+            ->add('_action','actions',array(
+                'actions' =>array(
+                    'edit' =>array(),
+                )
+            ));
     }
 
 }

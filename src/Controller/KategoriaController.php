@@ -15,10 +15,10 @@ class KategoriaController extends Controller
 
         $entityManager = $this->getDoctrine()->getManager();
 
-        $kategoria = new Kategoria('zupy');
+//        $kategoria = new Kategoria('zupy');
 
         // tell Doctrine you want to (eventually) save the Product (no queries yet)
-        $entityManager->persist($kategoria);
+//        $entityManager->persist($kategoria);
 
         // actually executes the queries (i.e. the INSERT query)
         $entityManager->flush();

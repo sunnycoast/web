@@ -19,7 +19,6 @@ class PracownikAdmin extends AbstractAdmin
     protected function configureFormFields(FormMapper $form)
     {
         $form
-            ->add('IdPracownika')
             ->add('PIN')
             ->add('IdRoli')
             ->add('IdOsoby');
@@ -40,7 +39,13 @@ class PracownikAdmin extends AbstractAdmin
             ->addIdentifier('IdPracownika')
             ->add('PIN')
             ->add('IdRoli')
-            ->add('IdOsoby');
+            ->add('IdOsoby')
+            //         add custom action links
+            ->add('_action','actions',array(
+                'actions' =>array(
+                    'edit' =>array(),
+                )
+            ));
     }
 
 }

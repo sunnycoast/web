@@ -69,13 +69,26 @@ class Stolik implements \Serializable
             ) = unserialize($serialized, ['allowed_classes' => false]);
     }
 
-    public function __construct ($NazwaStolika, $KodStolika, $IdSektora, $LiczbaMiejsc = 2, $Zajety = 0)
+//    public function __construct ($NazwaStolika, $KodStolika, $IdSektora, $LiczbaMiejsc = 2, $Zajety = 0)
+//    {
+//        $this->NazwaStolika = $NazwaStolika;
+//        $this->KodStolika   = $KodStolika;
+//        $this->IdSektora    = $IdSektora;
+//        $this->LiczbaMiejsc = $LiczbaMiejsc;
+//        $this->Zajety       = $Zajety;
+//    }
+
+    public function __construct()
     {
-        $this->NazwaStolika = $NazwaStolika;
-        $this->KodStolika   = $KodStolika;
-        $this->IdSektora    = $IdSektora;
-        $this->LiczbaMiejsc = $LiczbaMiejsc;
-        $this->Zajety       = $Zajety;
+
+    }
+
+    /**
+     * @param mixed $IdStolika
+     */
+    public function setIdStolika($IdStolika): void
+    {
+        $this->IdStolika = $IdStolika;
     }
 
     public function getIdStolika()

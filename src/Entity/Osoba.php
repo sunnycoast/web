@@ -54,14 +54,19 @@ class Osoba
      */
     protected $DataUrodzenia;
 
-    public function __construct ($Email, $Imie, $Nazwisko, $Plec, $NrTelefonu, $date)
+//    public function __construct ($Email, $Imie, $Nazwisko, $Plec, $NrTelefonu, $date)
+//    {
+//        $this->Email            = $Email;
+//        $this->Imie             = $Imie;
+//        $this->Nazwisko         = $Nazwisko;
+//        $this->Plec             = $Plec;
+//        $this->NrTelefonu       = $NrTelefonu;
+//        $this->DataUrodzenia    = new \DateTime($date);
+//    }
+
+    public function __construct()
     {
-        $this->Email            = $Email;
-        $this->Imie             = $Imie;
-        $this->Nazwisko         = $Nazwisko;
-        $this->Plec             = $Plec;
-        $this->NrTelefonu       = $NrTelefonu;
-        $this->DataUrodzenia    = new \DateTime($date);
+
     }
 
     public function getIdOsoby()
@@ -99,5 +104,21 @@ class Osoba
 
     public function getDataUrodzenia()
     {    return $this->DataUrodzenia;    }
+
+    /**
+     * @param mixed $IdOsoby
+     */
+    public function setIdOsoby($IdOsoby): void
+    {
+        $this->IdOsoby = $IdOsoby;
+    }
+
+    /**
+     * @param mixed $DataUrodzenia
+     */
+    public function setDataUrodzenia($DataUrodzenia): void
+    {
+        $this->DataUrodzenia = $DataUrodzenia;
+    }
 
 }

@@ -62,7 +62,13 @@ class RachunekAdmin extends AbstractAdmin
             ->add('UwagiPracownika')
             ->add('UwagiGoscia')
             ->add('IdStolika')
-            ->add('IdStalegoKlienta');
+            ->add('IdStalegoKlienta')
+            //         add custom action links
+            ->add('_action','actions',array(
+                'actions' =>array(
+                    'edit' =>array(),
+                )
+            ));
     }
 
 }

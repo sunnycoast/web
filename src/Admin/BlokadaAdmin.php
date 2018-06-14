@@ -29,10 +29,7 @@ class BlokadaAdmin extends AbstractAdmin
                 'class' => PozycjaMenu::class,
                 'choice_label' =>'IdPozycjiMenu',
             ])
-            ->add('IdPracownika', EntityType::class,[
-                'class' => Pracownik::class,
-                'choice_label' =>'IdPracownika',
-            ]);
+            ->add('IdPracownika');
     }
 
     protected function configureDatagridFilters(DatagridMapper $filter)
@@ -54,7 +51,14 @@ class BlokadaAdmin extends AbstractAdmin
             ->add('DataWycofania')
             ->add('Powod')
             ->add('IdPozycjiMenu')
-            ->add('IdPracownika');
+            ->add('IdPracownika')
+//         add custom action links
+            ->add('_action','actions',array(
+                'actions' =>array(
+                    'edit' =>array()
+                )
+            ));
+
     }
 
 

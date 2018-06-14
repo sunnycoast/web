@@ -37,11 +37,16 @@ class Pracownik implements \Serializable
      */
     protected $IdOsoby;
 
-    public function __construct ($PIN, $IdRoli, $IdOsoby, $StolikWybrany = 0)
+//    public function __construct ($PIN, $IdRoli, $IdOsoby, $StolikWybrany = 0)
+//    {
+//        $this->PIN     = $PIN;
+//        $this->IdRoli  = $IdRoli;
+//        $this->IdOsoby = $IdOsoby;
+//    }
+
+    public function __construct()
     {
-        $this->PIN     = $PIN;
-        $this->IdRoli  = $IdRoli;
-        $this->IdOsoby = $IdOsoby;
+
     }
 
     //  dodać stawki, tabelę dane pracownika(dane potrzebne do umowy)
@@ -66,6 +71,30 @@ class Pracownik implements \Serializable
 
     public function getIdOsoby()
     {    return $this->IdOsoby;    }
+
+    /**
+     * @param mixed $IdRoli
+     */
+    public function setIdRoli($IdRoli): void
+    {
+        $this->IdRoli = $IdRoli;
+    }
+
+    /**
+     * @param mixed $IdPracownika
+     */
+    public function setIdPracownika($IdPracownika): void
+    {
+        $this->IdPracownika = $IdPracownika;
+    }
+
+    /**
+     * @param mixed $IdOsoby
+     */
+    public function setIdOsoby($IdOsoby): void
+    {
+        $this->IdOsoby = $IdOsoby;
+    }
 
     /** @see \Serializable::serialize() */
     public function serialize()

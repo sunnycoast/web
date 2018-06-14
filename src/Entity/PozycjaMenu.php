@@ -48,15 +48,20 @@ class PozycjaMenu implements \Serializable
      */
     protected $IdVAT;
 
-    public function __construct ($CenaBrutto, $DataWprowadzenia, $IdProduktu, $IdVAT, $DataWycofania = null)
-    {
-        $this->CenaBrutto       = $CenaBrutto;
-        $this->DataWprowadzenia = $DataWprowadzenia;
-        $this->IdProduktu       = $IdProduktu;
-        $this->IdVAT            = $IdVAT;
+//    public function __construct ($CenaBrutto, $DataWprowadzenia, $IdProduktu, $IdVAT, $DataWycofania = null)
+//    {
+//        $this->CenaBrutto       = $CenaBrutto;
+//        $this->DataWprowadzenia = $DataWprowadzenia;
+//        $this->IdProduktu       = $IdProduktu;
+//        $this->IdVAT            = $IdVAT;
+//
+//        if(!is_null($DataWycofania))
+//        {    $this->DataWprowadzenia = new \DateTime($DataWycofania);    }
+//    }
 
-        if(!is_null($DataWycofania))
-        {    $this->DataWprowadzenia = new \DateTime($DataWycofania);    }
+    public function __construct()
+    {
+
     }
 
     public function getIdPozycjiMenu()

@@ -19,7 +19,6 @@ class SektorAdmin extends AbstractAdmin
     protected function configureFormFields(FormMapper $form)
     {
         $form
-            ->add('IdSektora')
             ->add('NazwaSektora')
             ->add('Aktywny');
     }
@@ -37,7 +36,13 @@ class SektorAdmin extends AbstractAdmin
         $list
             ->addIdentifier('IdSektora')
             ->add('NazwaSektora')
-            ->add('Aktywny');
+            ->add('Aktywny')
+            //         add custom action links
+            ->add('_action','actions',array(
+                'actions' =>array(
+                    'edit' =>array(),
+                )
+            ));
     }
 
 }

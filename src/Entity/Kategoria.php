@@ -30,10 +30,15 @@ class Kategoria implements \Serializable
     /** @ORM\Column(type="string") **/
     protected $KolorKategorii;
 
-    public function __construct ($NazwaKategorii, $KolorKategorii = 'FFFFFF')
+//    public function __construct ($NazwaKategorii, $KolorKategorii = 'FFFFFF')
+//    {
+//        $this->NazwaKategorii = $NazwaKategorii;
+//        $this->KolorKategorii = $KolorKategorii;
+//    }
+
+    public function __construct()
     {
-        $this->NazwaKategorii = $NazwaKategorii;
-        $this->KolorKategorii = $KolorKategorii;
+
     }
 
     public function getIdKategorii()
@@ -50,6 +55,22 @@ class Kategoria implements \Serializable
 
     public function setKolorKategorii($KolorKategorii)
     {    $this->KolorKategorii = $KolorKategorii;    }
+
+    /**
+     * @param mixed $IdKategorii
+     */
+    public function setIdKategorii($IdKategorii): void
+    {
+        $this->IdKategorii = $IdKategorii;
+    }
+
+    /**
+     * @param mixed $NazwaKategorii
+     */
+    public function setNazwaKategorii($NazwaKategorii): void
+    {
+        $this->NazwaKategorii = $NazwaKategorii;
+    }
 
 
     public function serialize()

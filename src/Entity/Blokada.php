@@ -48,22 +48,22 @@ class Blokada implements \Serializable
     protected $IdPracownika;
 
 
-    public function __construct ($Powod, $IdPozycjiMenu, $DataWycofania = null, $DataWprowadzenia = null)
-    {
-        if(is_null($DataWprowadzenia))
-        {    $this->DataWprowadzenia = new \DateTime();    }
-        else
-        {    $this->DataWprowadzenia = new \DateTime($DataWprowadzenia);    }
-
-        if(is_null($DataWycofania))
-        //następny dzień
-        {    $this->DataWycofania = new \DateTime();    }
-        else
-        {    $this->DataWycofania = new \DateTime($DataWycofania);    }
-
-        $this->Powod   = $Powod;
-        $this->IdPozycjiMenu    = $IdPozycjiMenu;
-    }
+//    public function __construct ($Powod, $IdPozycjiMenu, $DataWycofania = null, $DataWprowadzenia = null)
+//    {
+//        if(is_null($DataWprowadzenia))
+//        {    $this->DataWprowadzenia = new \DateTime();    }
+//        else
+//        {    $this->DataWprowadzenia = new \DateTime($DataWprowadzenia);    }
+//
+//        if(is_null($DataWycofania))
+//        //następny dzień
+//        {    $this->DataWycofania = new \DateTime();    }
+//        else
+//        {    $this->DataWycofania = new \DateTime($DataWycofania);    }
+//
+//        $this->Powod   = $Powod;
+//        $this->IdPozycjiMenu    = $IdPozycjiMenu;
+//    }
 
 //    public function __construct ($Powod, $IdPozycjiMenu, $DataWycofania, $DataWprowadzenia,$IdPracownika,$IdBlokady)
 //    {
@@ -74,6 +74,43 @@ class Blokada implements \Serializable
 //        $this->IdPracownika   = $IdPracownika;
 //        $this->IdBlokady    = $IdBlokady;
 //    }
+
+    public function __construct()
+    {
+
+    }
+
+    /**
+     * @param mixed $DataWycofania
+     */
+    public function setDataWycofania($DataWycofania)
+    {
+        $this->DataWycofania = $DataWycofania;
+    }
+
+    /**
+     * @param mixed $IdBlokady
+     */
+    public function setIdBlokady($IdBlokady): void
+    {
+        $this->IdBlokady = $IdBlokady;
+    }
+
+    /**
+     * @param mixed $IdPozycjiMenu
+     */
+    public function setIdPozycjiMenu($IdPozycjiMenu)
+    {
+        $this->IdPozycjiMenu = $IdPozycjiMenu;
+    }
+
+    /**
+     * @param mixed $IdPracownika
+     */
+    public function setIdPracownika($IdPracownika)
+    {
+        $this->IdPracownika = $IdPracownika;
+    }
 
     public function getIdBlokady()
     {    return $this->IdBlokady;    }

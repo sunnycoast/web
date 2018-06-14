@@ -26,6 +26,11 @@ class VAT implements \Serializable
     /** @ORM\Column(type="string") **/
     protected $Dotyczy;
 
+    public function __construct ()
+    {
+
+    }
+
     /** @see \Serializable::serialize() */
     public function serialize()
     {
@@ -50,11 +55,6 @@ class VAT implements \Serializable
             ) = unserialize($serialized, ['allowed_classes' => false]);
     }
 
-    public function __construct ($StawkaVAT, $Dotyczy = null)
-    {
-        $this->StawkaVAT = $StawkaVAT;
-        $this->Dotyczy   = $Dotyczy;
-    }
 
     public function getIdVAT()
     {    return $this->IdVAT;    }

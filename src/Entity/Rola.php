@@ -28,6 +28,11 @@ class Rola implements \Serializable
     /** @ORM\Column(type="string") */
     protected $OpisRoli;
 
+    public function __construct()
+    {
+
+    }
+
     /** @see \Serializable::serialize() */
     public function serialize()
 {
@@ -54,6 +59,14 @@ class Rola implements \Serializable
 
     public function getIdRoli()
     {    return $this->IdRoli;    }
+
+    /**
+     * @param mixed $IdRoli
+     */
+    public function setIdRoli($IdRoli): void
+    {
+        $this->IdRoli = $IdRoli;
+    }
 
     public function getNazwaRoli()
     {    return $this->NazwaRoli;    }

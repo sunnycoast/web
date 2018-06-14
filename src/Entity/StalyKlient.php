@@ -53,6 +53,25 @@ class StalyKlient implements UserInterface, \Serializable
         // $this->salt = md5(uniqid('', true));
     }
 
+    public function getIdStalegoKlienta()
+    {
+        return $this->IdStalegoKlienta;
+    }
+
+    public function getZnizka()
+    {
+        return $this->Znizka;
+    }
+
+    public function getInformacjaHandlowa()
+    {
+        return $this->InformacjaHandlowa;
+    }
+    public function getIdOsoby()
+    {
+        return $this->IdOsoby;
+    }
+
     public function getUsername()
     {
         return $this->IdStalegoKlienta;
@@ -73,6 +92,46 @@ class StalyKlient implements UserInterface, \Serializable
     public function getRoles()
     {
         return array('ROLE_USER');
+    }
+
+    /**
+     * @param mixed $IdStalegoKlienta
+     */
+    public function setIdStalegoKlienta($IdStalegoKlienta): void
+    {
+        $this->IdStalegoKlienta = $IdStalegoKlienta;
+    }
+
+    /**
+     * @param mixed $password
+     */
+    public function setPassword($password): void
+    {
+        $this->password = $password;
+    }
+
+    /**
+     * @param mixed $InformacjaHandlowa
+     */
+    public function setInformacjaHandlowa($InformacjaHandlowa): void
+    {
+        $this->InformacjaHandlowa = $InformacjaHandlowa;
+    }
+
+    /**
+     * @param mixed $Znizka
+     */
+    public function setZnizka($Znizka): void
+    {
+        $this->Znizka = $Znizka;
+    }
+
+    /**
+     * @param mixed $IdOsoby
+     */
+    public function setIdOsoby($IdOsoby): void
+    {
+        $this->IdOsoby = $IdOsoby;
     }
 
     public function eraseCredentials()

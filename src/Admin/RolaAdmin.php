@@ -19,7 +19,6 @@ class RolaAdmin extends AbstractAdmin
     protected function configureFormFields(FormMapper $form)
     {
         $form
-            ->add('IdRoli')
             ->add('NazwaRoli')
             ->add('OpisRoli');
     }
@@ -37,7 +36,13 @@ class RolaAdmin extends AbstractAdmin
         $list
             ->addIdentifier('IdRoli')
             ->add('NazwaRoli')
-            ->add('OpisRoli');
+            ->add('OpisRoli')
+            //         add custom action links
+            ->add('_action','actions',array(
+                'actions' =>array(
+                    'edit' =>array(),
+                )
+            ));
     }
 
 }

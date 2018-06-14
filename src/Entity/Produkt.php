@@ -38,12 +38,17 @@ class Produkt implements \Serializable
      */
     protected $IdKategorii;
 
-    public function __construct ($NazwaProduktu, $IdKategorii, $Opis = null, $Przepis = null)
+//    public function __construct ($NazwaProduktu, $IdKategorii, $Opis = null, $Przepis = null)
+//    {
+//        $this->NazwaProduktu = $NazwaProduktu;
+//        $this->IdKategorii   = $IdKategorii;
+//        $this->Opis          = $Opis;
+//        $this->Przepis       = $Przepis;
+//    }
+
+    public function __construct()
     {
-        $this->NazwaProduktu = $NazwaProduktu;
-        $this->IdKategorii   = $IdKategorii;
-        $this->Opis          = $Opis;
-        $this->Przepis       = $Przepis;
+
     }
 
     public function getIdProduktu()

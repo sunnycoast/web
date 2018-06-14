@@ -20,8 +20,8 @@ class KategoriaAdmin extends AbstractAdmin
     protected function configureFormFields(FormMapper $form)
     {
         $form
-            ->add('NazwaKategorii',TextType::class)
-            ->add('KolorKategorii',TextType::class);
+            ->add('NazwaKategorii')
+            ->add('KolorKategorii');
     }
 
     protected function configureDatagridFilters(DatagridMapper $filter)
@@ -37,7 +37,13 @@ class KategoriaAdmin extends AbstractAdmin
         $list
             ->addIdentifier('IdKategorii')
             ->add('NazwaKategorii')
-            ->add('KolorKategorii');
+            ->add('KolorKategorii')
+            //         add custom action links
+            ->add('_action','actions',array(
+                'actions' =>array(
+                    'edit' =>array(),
+                )
+            ));
     }
 
 }

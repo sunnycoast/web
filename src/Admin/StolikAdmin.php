@@ -9,17 +9,18 @@
 namespace App\Admin;
 
 
+use App\Entity\Sektor;
 use Sonata\AdminBundle\Admin\AbstractAdmin;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
 class StolikAdmin extends AbstractAdmin
 {
     protected function configureFormFields(FormMapper $form)
     {
         $form
-            ->add('id')
             ->add('NazwaStolika')
             ->add('KodStolika')
             ->add('LiczbaMiejsc')
@@ -46,7 +47,13 @@ class StolikAdmin extends AbstractAdmin
             ->add('KodStolika')
             ->add('LiczbaMiejsc')
             ->add('Zajety')
-            ->add('IdSektora');
+            ->add('IdSektora')
+            //         add custom action links
+            ->add('_action','actions',array(
+                'actions' =>array(
+                    'edit' =>array(),
+                )
+            ));
     }
 
 }

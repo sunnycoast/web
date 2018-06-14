@@ -19,7 +19,6 @@ class StalyKlientAdmin extends AbstractAdmin
     protected function configureFormFields(FormMapper $form)
     {
         $form
-            ->add('IdStalegoKlienta')
             ->add('InformacjaHandlowa')
             ->add('password')
             ->add('Znizka')
@@ -44,7 +43,13 @@ class StalyKlientAdmin extends AbstractAdmin
             ->add('InformacjaHandlowa')
             ->add('password')
             ->add('Znizka')
-            ->add('IdOsoby');
+            ->add('IdOsoby')
+            //         add custom action links
+            ->add('_action','actions',array(
+                'actions' =>array(
+                    'edit' =>array(),
+                )
+            ));
     }
 
 }
