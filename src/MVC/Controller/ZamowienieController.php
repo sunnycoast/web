@@ -41,7 +41,11 @@ class ZamowienieController extends App
             }
             else
             {
+<<<<<<< HEAD
+//                var_dump($_SESSION['IdRachunku']);
+=======
                 //var_dump($_SESSION['IdRachunku']);
+>>>>>>> 530c427abf24bb32a571b71d074eb01c3c2d1ce6
                 if (!empty($_POST))
                 {
                     $em = $this->getEntityManager();

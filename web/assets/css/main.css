@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0;
     height: 100%;
-    color: #ffffff;
+    color: rgba(255, 255, 255, 1.0);
     font-family: 'Oswald', sans-serif;
     font-size: 16px;
     box-sizing: border-box;
@@ -90,8 +90,8 @@ footer {
     color: #ffffff;
     font-size: 34px;
     font-weight: bold;
-    padding-top: 9px;
-    padding-right: 9px;
+    padding-top: 51px;
+    padding-right: 51px;
 }
 
 .tytul {
@@ -119,7 +119,10 @@ footer {
     width: 200px;
     cursor: pointer;
     border-radius: 5px;
-    color:black
+    color:black;
+
+    border-bottom-width: 0px ;
+    border-top-width: 0px ;
 }
 
 .nf {
@@ -145,4 +148,13 @@ input::placeholder {
     align: center;
     opacity: 0.3;
 
+}
+
+label {
+    width: 100px;
+    margin-bottom: 3px;
+}
+
+.opis {
+    font-size: 20px;
 }

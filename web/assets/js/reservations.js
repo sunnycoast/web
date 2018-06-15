@@ -13,11 +13,11 @@ function createReservationsTable()
 {
     let tr = $('<tr>');
     $('<td>').addClass('c cListNa').html('Rezerwacja')  .appendTo(tr);
-    $('<td>').addClass('c cListCn').html('Data' )       .appendTo(tr);
-    $('<td>').addClass('c cListCn').html('Godzina' )    .appendTo(tr);
-    $('<td>').addClass('c cListIl').html('Osoby')       .appendTo(tr);
-    $('<td>').addClass('c cListRz').html('Stolik')      .appendTo(tr);
-    $('<td>').addClass('c cListRz').html('Rachunek')    .appendTo(tr);
+    $('<td>').addClass('c cListCn').html('Data: ' )       .appendTo(tr);
+    $('<td>').addClass('c cListCn').html('Godzina: ' )    .appendTo(tr);
+    $('<td>').addClass('c cListIl').html('Osoby: ')       .appendTo(tr);
+    $('<td>').addClass('c cListRz').html('Stolik: ')      .appendTo(tr);
+    $('<td>').addClass('c cListRz').html('Rachunek: ')    .appendTo(tr);
     $('<td>').addClass('c cListBt')                     .appendTo(tr);
     let table = $('<table>').attr({'id': 'tp'});
     $(tr).appendTo(table);

@@ -1,8 +1,11 @@
 {% extends 'MVC/View/Layouts/main.html.twig' %}
 
+{% set page_title = 'Rezerwacje' %}
+
 {% block sources %}
     <title>Projekt Restauracja</title>
     <link rel="stylesheet" href="{{ asset('css/main.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('css/menu.css') }}"/>
     <script>
         let aReservations = [];
         {% for r in reservations %}
@@ -10,6 +13,8 @@
             "table":{{ r.IdStolika }}, "sector":"{{ r.NazwaSektora }}"};
         {% endfor %}
     </script>
+<<<<<<< HEAD
+=======
     <script async defer src="https://apis.google.com/js/api.js"
       onload="this.onload=function(){};handleClientLoad()"
       onreadystatechange="if (this.readyState === 'complete') this.onload()">
@@ -163,14 +168,11 @@
             border-style: none;
             box-shadow: 4px 4px #666666;
         }
+>>>>>>> 530c427abf24bb32a571b71d074eb01c3c2d1ce6
 
-    </style>
 {% endblock %}
 
 {% block main %}
-    <header>
-        <p class="tytul">Rezerwacje</p>
-    </header>
     <button id="newReservation" class="backButton">Nowa rezerwacja</button>
     <div id='mainBox'>
         <div id="pKat"></div>

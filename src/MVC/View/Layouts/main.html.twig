@@ -21,14 +21,14 @@
 <body>
 <div id="container">
     <header class="navbar">
-        {#<div class="navbar-container">#}
+        <div class="navbar-container">
             <div class="navbar-header">
                 <a class="navbar-brand" id="logo" href='/'>
                     <img id="img" src="{{ asset('images/taca.png')}}"/>
                     <h3 id="logo-title">Projekt Restauracja</h3>
                 </a>
             </div>
-        {#</div>#}
+        </div>
         <div style="float: right; width: 50%">
 
             <div class="navbar-right">
@@ -38,6 +38,17 @@
                             <p id="przywitanie">Witaj {{ nameFirst }} <!--{{ nameLast }}-->!</p>
                         </div>
                     {% endif %}
+
+                    <div class="inline">
+                        <p id="przywitanie">{% if page_title is defined %}
+
+                            {{ page_title }}
+
+                            {% endif %}</title>
+                            </p>
+                    </div>
+
+
                     <div class="inline">
                         <div  id="zeg" class="zeg c"></div>
                     </div>

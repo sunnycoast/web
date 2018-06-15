@@ -4,6 +4,7 @@
     <title>Projekt Restauracja</title>
     <link rel="stylesheet" href="{{ asset('css/main.css') }}"/>
     <link rel="stylesheet" href="{{ asset('css/zamowienie.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('css/menu.css') }}"/>
     <script>
         let log_address = "{{ log_adres }}";
         let order = [];
@@ -30,7 +31,7 @@
         <div class="zam">
             <button id="sub1" class="cBattonNavZam">Zamówienie</button>
             <div class="pZam">
-                <div id="pZaP" class="greeting">Witaj {{ imie }}!<br>Tutaj będą się pojawiały<br>Twoje zamówienia.</div>
+                <div id="pZaP" class="greeting">Witaj, {{ imie }}!<br>Tutaj będą się pojawiały<br>Twoje zamówienia.</div>
                 <div id="pZaA"></div>
                 <div id="pZaR"></div>
             </div>
