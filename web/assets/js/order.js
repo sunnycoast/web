@@ -41,6 +41,7 @@ function createOrderTable()
         $('<div>').attr({'id': 'bTotalO'}).html(FD(sumAll) + ' zł').appendTo(div);
         $(div).appendTo('#pZaA');
         $('#pZaP').removeClass('greeting').html("");
+        document.getElementById("pZaP").style.marginTop = "0px";
     }
 }
 
@@ -68,6 +69,7 @@ function createTable()
     {
         let box = $('#pZaP');
         $(box).html("").removeClass('greeting');
+        document.getElementById("pZaP").style.marginTop = "0px";
         let tr = $('<tr>');
         $('<td>').addClass('c cListNa').html('Nazwa').appendTo(tr);
         $('<td>').addClass('c cListCn').html('Cena' ).appendTo(tr);
@@ -164,6 +166,7 @@ function rDelete(idNum)
         {
             $(box).html('Tutaj będą się pojawiały<br>Twoje zamówienia.');
             $(box).addClass('greeting');
+            document.getElementById("pZaP").style.marginTop = "200px";
             disableButtons();
         }
     }

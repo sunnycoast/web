@@ -3,6 +3,7 @@ $('#backButton')    .click( function () {back()} );
 $('#mainBox').addClass('box, c');
 $('#categoryMainBox').addClass('kat');
 $('#pKat').addClass('pKat');
+//window.onLoadCallback =
 createReservationsTable();
 
 function newReservation()
@@ -24,6 +25,7 @@ function createReservationsTable()
     let nr = 0;
     for(let r in aReservations)
         appendReservation(nr++, r, aReservations[r])
+
 }
 
 function appendReservation(nr, reservationID, reservation)
@@ -63,24 +65,24 @@ function getIdNum(id)
 
 function calendar(id)
 {
-    let clinetID = '289442566333-24jt321jartmei9o38q7e5u4ke2r3jf7.apps.googleusercontent.com';
-    let r = aReservations[id];
-    console.log("Obiad w Projekt Restauracja"+' '+r["date"]+" "+r["time"]);
-
-    let event = {
-        'summary': "Obiad w Projekt Restauracja",
-        'location': '800 Howard St., San Francisco, CA 94103',
-        'description': "Obiad w Projekt Restauracja",
+    var event = {
+        'summary': 'Rezerwacja w restauracji',
+        'location': 'Restauracja',
+        'description': 'Zarezerwowano stolik w restauracji. '+ id,
         'start': {
-            'dateTime': r["date"]+'T09:00:00-07:00',
+            'dateTime': '2019-05-28T09:00:00-07:00',
             'timeZone': 'America/Los_Angeles'
         },
         'end': {
-            'dateTime': r["date"]+'T17:00:00-07:00',
+            'dateTime': '2019-05-28T17:00:00-07:00',
             'timeZone': 'America/Los_Angeles'
         },
+        'recurrence': [
+        //    'RRULE:FREQ=DAILY;COUNT=2'
+        ],
         'attendees': [
-            {'email': 'ka3.sledz@gmail.com'},
+        //    {'email': 'lpage@example.com'},
+        //    {'email': 'sbrin@example.com'}
         ],
         'reminders': {
             'useDefault': false,
@@ -91,7 +93,7 @@ function calendar(id)
         }
     };
 
-    let request = gapi.client.calendar.events.insert({
+    var request = gapi.client.calendar.events.insert({
         'calendarId': 'primary',
         'resource': event
     });
